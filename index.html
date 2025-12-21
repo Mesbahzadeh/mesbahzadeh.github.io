@@ -77,19 +77,13 @@
         }
     </script>
 
-    <!-- React & Babel Setup for Browser -->
-    <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@18.2.0",
-        "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-        "lucide-react": "https://esm.sh/lucide-react@0.300.0"
-      }
-    }
-    </script>
-    
-    <!-- Babel for JSX transformation -->
+    <!-- React & Babel Setup for Browser - UPDATED FOR MOBILE COMPATIBILITY -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Lucide React Icons -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
 
     <style>
         /* Custom Scrollbar - Mobile Friendly */
@@ -180,6 +174,21 @@
         html {
             -webkit-text-size-adjust: 100%;
         }
+        
+        /* Loading Animation */
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #BC6C25;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -191,31 +200,38 @@
     </noscript>
     
     <div id="root">
-        <div style="padding: 2rem; text-align: center; background: #FEFAE0; color: #283618; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
-            <div>
-                <div style="font-size: 2rem; margin-bottom: 1rem;">💻</div>
-                <h1 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">در حال بارگذاری...</h1>
-                <p>لطفاً چند لحظه صبر کنید</p>
-            </div>
+        <div style="padding: 2rem; text-align: center; background: #FEFAE0; color: #283618; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <div class="loading-spinner mb-4"></div>
+            <h1 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">در حال بارگذاری...</h1>
+            <p style="color: #606C38;">لطفاً چند لحظه صبر کنید</p>
         </div>
     </div>
 
     <!-- MAIN REACT APPLICATION -->
-    <script type="text/babel" data-type="module">
-        import React, { useState, useEffect, useLayoutEffect } from 'react';
-        import { createRoot } from 'react-dom/client';
-        import { 
+    <script type="text/babel">
+        // --- Global Variables ---
+        const { 
+            useState, 
+            useEffect, 
+            useLayoutEffect 
+        } = React;
+        
+        const { 
             Menu, X, ArrowLeft, Github, Linkedin, Mail, 
             Code, Brain, Layers, LineChart, Globe, Database, 
             Server, Cpu, BookOpen, ExternalLink, Tag, 
-            Phone, Send, Youtube, Instagram, Twitter 
-        } from 'lucide-react';
+            Phone, Send, Youtube, Instagram, Twitter,
+            Video, Award, Users, Clock, ChevronLeft,
+            Image, BarChart3, Cpu as CpuIcon, Smartphone,
+            Database as DatabaseIcon, Cloud, Terminal
+        } = lucideReact;
 
         // --- Data Definitions ---
         const NAV_ITEMS = [
             { label: 'خانه', href: '#home' },
             { label: 'درباره من', href: '#about' },
             { label: 'مهارت‌ها', href: '#skills' },
+            { label: 'دوره‌ها', href: '#courses' },
             { label: 'نمونه کارها', href: '#portfolio' },
             { label: 'تماس', href: '#contact' },
         ];
@@ -231,11 +247,104 @@
             { name: 'Docker', icon: Cpu, category: 'Web', level: 75 },
         ];
 
+        // --- دوره‌های آموزشی ---
+        const COURSES = [
+            {
+                title: 'پایتون جامع از صفر تا صد',
+                description: 'یادگیری برنامه‌نویسی پایتون با پروژه‌های عملی و ورود به بازار کار',
+                duration: '۶۰ ساعت',
+                students: '۱۲۰۰+',
+                level: 'مبتدی تا پیشرفته',
+                category: 'programming',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/python-complete',
+                icon: Code,
+                tags: ['Python', 'برنامه‌نویسی', 'مبتدی']
+            },
+            {
+                title: 'هوش مصنوعی و یادگیری ماشین',
+                description: 'آموزش کامل الگوریتم‌های ML و پیاده‌سازی پروژه‌های واقعی',
+                duration: '۸۰ ساعت',
+                students: '۸۵۰+',
+                level: 'متوسط تا پیشرفته',
+                category: 'ai',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/ai-ml',
+                icon: Brain,
+                tags: ['هوش مصنوعی', 'ML', 'TensorFlow']
+            },
+            {
+                title: 'پردازش تصویر با OpenCV و Python',
+                description: 'تشخیص اشیا، چهره و بینایی کامپیوتر با پروژه‌های کاربردی',
+                duration: '۴۵ ساعت',
+                students: '۶۵۰+',
+                level: 'متوسط',
+                category: 'ai',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/computer-vision',
+                icon: Image,
+                tags: ['پردازش تصویر', 'OpenCV', 'بینایی کامپیوتر']
+            },
+            {
+                title: 'علم داده با Python و Pandas',
+                description: 'آنالیز داده، مصورسازی و کار با دیتاست‌های بزرگ',
+                duration: '۵۵ ساعت',
+                students: '۹۰۰+',
+                level: 'متوسط',
+                category: 'data',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/data-science',
+                icon: BarChart3,
+                tags: ['علم داده', 'Pandas', 'تحلیل داده']
+            },
+            {
+                title: 'دوره جامع Django Web Development',
+                description: 'ساخت وب اپلیکیشن‌های حرفه‌ای با جنگو و ری‌اکت',
+                duration: '۷۰ ساعت',
+                students: '۱۱۰۰+',
+                level: 'مبتدی تا پیشرفته',
+                category: 'web',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/django',
+                icon: Globe,
+                tags: ['Django', 'وب', 'Backend']
+            },
+            {
+                title: 'طراحی رابط کاربری (UI/UX)',
+                description: 'اصول طراحی مدرن، Figma و ساخت پروتوتایپ',
+                duration: '۴۰ ساعت',
+                students: '۷۵۰+',
+                level: 'مبتدی تا متوسط',
+                category: 'design',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/ui-ux',
+                icon: Smartphone,
+                tags: ['UI/UX', 'Figma', 'طراحی']
+            },
+            {
+                title: 'SQL و پایگاه داده پیشرفته',
+                description: 'مدیریت دیتابیس، کوئری‌های پیچیده و بهینه‌سازی',
+                duration: '۳۵ ساعت',
+                students: '۸۰۰+',
+                level: 'متوسط',
+                category: 'data',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/sql-advanced',
+                icon: DatabaseIcon,
+                tags: ['SQL', 'دیتابیس', 'PostgreSQL']
+            },
+            {
+                title: 'دپلوی مدل‌های ML با FastAPI',
+                description: 'سرویس‌دهی مدل‌های یادگیری ماشین در تولید',
+                duration: '۳۰ ساعت',
+                students: '۵۰۰+',
+                level: 'پیشرفته',
+                category: 'ai',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/ml-deployment',
+                icon: Server,
+                tags: ['FastAPI', 'Deployment', 'MLOps']
+            }
+        ];
+
+        // --- پروژه‌های بیشتر ---
         const PROJECTS = [
             {
                 title: 'سیستم تشخیص تصویر CNN',
                 description: 'طراحی مدل‌های یادگیری عمیق پیشرفته برای طبقه‌بندی تصاویر پزشکی با دقت ۹۸٪.',
-                tags: ['Python', 'TensorFlow', 'Computer Vision'],
+                tags: ['Python', 'TensorFlow', 'Computer Vision', 'CNN'],
                 icon: Brain,
                 category: 'ai',
                 link: '#'
@@ -243,7 +352,7 @@
             {
                 title: 'پلتفرم آموزش آنلاین (LMS)',
                 description: 'پیاده‌سازی کامل سیستم مدیریت یادگیری با قابلیت آزمون آنلاین و صدور مدرک خودکار.',
-                tags: ['Django', 'React', 'PostgreSQL'],
+                tags: ['Django', 'React', 'PostgreSQL', 'REST API'],
                 icon: Globe,
                 category: 'web',
                 link: 'https://mesbahzadeh.pythonanywhere.com'
@@ -251,17 +360,81 @@
             {
                 title: 'بات تحلیلگر بورس',
                 description: 'ربات هوشمند تحلیل تکنیکال و فاندامنتال بازار سرمایه با استفاده از الگوریتم‌های هوش مصنوعی.',
-                tags: ['Pandas', 'Sklearn', 'Telegram API'],
+                tags: ['Pandas', 'Sklearn', 'Telegram API', 'Time Series'],
                 icon: LineChart,
                 category: 'ai',
                 link: '#'
             },
             {
-                title: 'دوره مستر کلاس پایتون',
-                description: 'تولید بیش از ۵۰ ساعت محتوای آموزشی تخصصی برنامه‌نویسی پایتون برای ورود به بازار کار.',
-                tags: ['Education', 'Video Production'],
-                icon: BookOpen,
-                category: 'teaching',
+                title: 'سیستم تشخیص چهره Real-time',
+                description: 'سیستم تشخیص هویت بلادرنگ با استفاده از FaceNet و OpenCV.',
+                tags: ['Python', 'OpenCV', 'Face Recognition', 'Real-time'],
+                icon: CpuIcon,
+                category: 'ai',
+                link: '#'
+            },
+            {
+                title: 'اپلیکیشن مدیریت پروژه',
+                description: 'وب اپلیکیشن کامل برای مدیریت تیم و پروژه با تخته‌های Kanban.',
+                tags: ['Vue.js', 'Node.js', 'MongoDB', 'WebSocket'],
+                icon: Layers,
+                category: 'web',
+                link: '#'
+            },
+            {
+                title: 'پلتفرم تحلیل احساسات متن',
+                description: 'تحلیل احساسات نظرات کاربران با مدل‌های Transformer پیشرفته.',
+                tags: ['NLP', 'BERT', 'Transformers', 'Sentiment Analysis'],
+                icon: Brain,
+                category: 'ai',
+                link: '#'
+            },
+            {
+                title: 'سیستم پیشنهاددهنده فیلم',
+                description: 'سیستم Recommendation Engine برای پیشنهاد فیلم بر اساس سلیقه کاربر.',
+                tags: ['Machine Learning', 'Collaborative Filtering', 'Flask'],
+                icon: Video,
+                category: 'ai',
+                link: '#'
+            },
+            {
+                title: 'داشبورد آنالیز داده‌های بزرگ',
+                description: 'داشبورد تعاملی برای مصورسازی و تحلیل Big Data.',
+                tags: ['React', 'D3.js', 'Big Data', 'Data Visualization'],
+                icon: BarChart3,
+                category: 'data',
+                link: '#'
+            },
+            {
+                title: 'API سرویس هوش مصنوعی',
+                description: 'سرویس ابری برای ارائه قابلیت‌های AI به صورت API.',
+                tags: ['FastAPI', 'Docker', 'AWS', 'Microservices'],
+                icon: Cloud,
+                category: 'web',
+                link: '#'
+            },
+            {
+                title: 'اپ موبایل یادگیری زبان',
+                description: 'اپلیکیشن موبایل آموزش زبان با قابلیت تشخیص صدا و تمرین تعاملی.',
+                tags: ['React Native', 'Firebase', 'Speech Recognition'],
+                icon: Smartphone,
+                category: 'web',
+                link: '#'
+            },
+            {
+                title: 'سیستم تشخیص بیماری از تصاویر X-ray',
+                description: 'مدل Deep Learning برای تشخیص خودکار بیماری‌ها از تصاویر پزشکی.',
+                tags: ['PyTorch', 'Medical AI', 'Image Classification'],
+                icon: Brain,
+                category: 'ai',
+                link: '#'
+            },
+            {
+                title: 'پنل مدیریت کسب‌وکار',
+                description: 'پنل مدیریت یکپارچه برای کسب‌وکارهای کوچک و متوسط.',
+                tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
+                icon: Terminal,
+                category: 'web',
                 link: '#'
             }
         ];
@@ -269,8 +442,8 @@
         const STATS = [
             { value: '+۸', label: 'سال تجربه' },
             { value: '+۱۰۰۰', label: 'دانشجو' },
-            { value: '+۳۰', label: 'پروژه موفق' },
-            { value: '+۱۰', label: 'دوره آموزشی' },
+            { value: '+۵۰', label: 'پروژه موفق' },
+            { value: '+۱۵', label: 'دوره آموزشی' },
         ];
 
         // --- Mobile Detection Hook ---
@@ -302,7 +475,6 @@
                 return () => window.removeEventListener('scroll', handleScroll);
             }, []);
 
-            // Prevent body scroll when mobile menu is open
             useEffect(() => {
                 if (isOpen && isMobile) {
                     document.body.style.overflow = 'hidden';
@@ -398,7 +570,7 @@
 
             return (
                 <section id="home" className="min-h-screen flex items-center justify-center pt-20 md:pt-24 pb-12 px-4 relative overflow-hidden">
-                    {/* Background Blobs - Reduced size for mobile */}
+                    {/* Background Blobs */}
                     <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[500px] md:h-[500px] bg-earth-primary/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob"></div>
                     <div className="absolute top-0 left-0 w-[150px] h-[150px] md:w-[500px] md:h-[500px] bg-earth-rust/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob" style={{animationDelay: '2s'}}></div>
                     <div className="absolute -bottom-16 left-4 md:-bottom-32 md:left-20 w-[180px] h-[180px] md:w-[500px] md:h-[500px] bg-earth-sand/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob" style={{animationDelay: '4s'}}></div>
@@ -435,11 +607,11 @@
                                     <ArrowLeft className="group-hover:-translate-x-1 transition-transform" size={18} />
                                 </a>
                                 <a 
-                                    href="#contact" 
+                                    href="#courses" 
                                     className="px-6 py-3 md:px-8 md:py-4 bg-white/50 border-2 border-earth-dark/10 text-earth-dark rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-white hover:border-earth-dark transition-all flex items-center justify-center min-h-[50px] active:scale-95"
-                                    aria-label="تماس با من"
+                                    aria-label="مشاهده دوره‌ها"
                                 >
-                                    تماس با من
+                                    مشاهده دوره‌ها
                                 </a>
                             </div>
 
@@ -466,7 +638,7 @@
                                     />
                                 </div>
                                 
-                                {/* Floating Badge - Hidden on very small screens */}
+                                {/* Floating Badge */}
                                 <div className="absolute bottom-6 -right-2 md:bottom-10 md:-right-4 glass-card p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg flex items-center gap-2 animate-bounce" style={{animationDuration: '3s'}}>
                                     <div className="bg-earth-rust/10 p-1.5 md:p-2 rounded-lg md:rounded-xl text-earth-rust">
                                         <Code size={18} md={24} />
@@ -572,13 +744,133 @@
             );
         };
 
+        const Courses = () => {
+            const [filter, setFilter] = useState('all');
+            
+            const filteredCourses = filter === 'all' 
+                ? COURSES 
+                : COURSES.filter(course => course.category === filter);
+            
+            const categories = [
+                { id: 'all', name: 'همه دوره‌ها' },
+                { id: 'programming', name: 'برنامه‌نویسی' },
+                { id: 'ai', name: 'هوش مصنوعی' },
+                { id: 'data', name: 'علم داده' },
+                { id: 'web', name: 'توسعه وب' },
+                { id: 'design', name: 'طراحی' }
+            ];
+
+            return (
+                <section id="courses" className="py-16 md:py-24 bg-white relative">
+                    <div className="container mx-auto px-4 sm:px-6">
+                        <div className="text-center mb-10 md:mb-16 space-y-3 md:space-y-4">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-earth-dark">دوره‌های <span className="text-earth-primary">آموزشی</span></h2>
+                            <p className="text-earth-dark/60 max-w-xl mx-auto text-sm md:text-base">
+                                آموزش‌های تخصصی برای ورود به بازار کار فناوری
+                            </p>
+                        </div>
+
+                        {/* Filter Tabs */}
+                        <div className="flex flex-wrap gap-2 justify-center mb-8 md:mb-12">
+                            {categories.map(cat => (
+                                <button
+                                    key={cat.id}
+                                    onClick={() => setFilter(cat.id)}
+                                    className={`px-4 py-2 rounded-full text-sm font-bold transition-all min-h-[44px] ${
+                                        filter === cat.id 
+                                        ? 'bg-earth-dark text-earth-cream shadow-md' 
+                                        : 'bg-earth-cream text-earth-dark/60 hover:text-earth-dark hover:bg-earth-primary/10 border border-earth-dark/10'
+                                    }`}
+                                    aria-label={`فیلتر ${cat.name}`}
+                                >
+                                    {cat.name}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Courses Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                            {filteredCourses.map((course, idx) => (
+                                <div key={idx} className="group bg-earth-cream rounded-2xl md:rounded-[2rem] overflow-hidden border border-earth-dark/5 hover:border-earth-primary/30 transition-all duration-300 hover:shadow-xl md:hover:shadow-2xl flex flex-col h-full">
+                                    <div className="p-5 md:p-8 flex-1 flex flex-col">
+                                        <div className="flex items-start justify-between mb-4">
+                                            <div className="w-12 h-12 md:w-14 md:h-14 bg-earth-primary/10 rounded-xl md:rounded-2xl flex items-center justify-center text-earth-primary group-hover:bg-earth-primary group-hover:text-earth-cream transition-colors">
+                                                <course.icon size={24} md={28} />
+                                            </div>
+                                            <span className="text-[10px] md:text-xs font-bold px-2 py-1 bg-earth-sand/20 text-earth-rust rounded-full">
+                                                {course.level}
+                                            </span>
+                                        </div>
+                                        
+                                        <h3 className="text-lg md:text-2xl font-bold text-earth-dark mb-3 group-hover:text-earth-rust transition-colors">
+                                            {course.title}
+                                        </h3>
+                                        
+                                        <p className="text-earth-dark/70 text-sm leading-relaxed mb-6 flex-1">
+                                            {course.description}
+                                        </p>
+                                        
+                                        <div className="flex gap-2 mb-4 flex-wrap">
+                                            {course.tags.map((tag, i) => (
+                                                <span key={i} className="text-[10px] font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                        
+                                        <div className="flex justify-between items-center text-xs text-earth-dark/50 border-t border-earth-dark/5 pt-4">
+                                            <div className="flex items-center gap-1">
+                                                <Clock size={14} />
+                                                <span>{course.duration}</span>
+                                            </div>
+                                            <div className="flex items-center gap-1">
+                                                <Users size={14} />
+                                                <span>{course.students}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="p-5 md:p-8 pt-0">
+                                        <a 
+                                            href={course.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block w-full py-3 bg-earth-dark text-earth-cream font-bold text-center rounded-xl hover:bg-earth-primary transition-colors flex items-center justify-center gap-2 group/btn"
+                                            aria-label={`ورود به دوره ${course.title}`}
+                                        >
+                                            مشاهده دوره
+                                            <ChevronLeft className="group-hover/btn:-translate-x-1 transition-transform" size={16} />
+                                        </a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        
+                        {/* View All Courses Button */}
+                        <div className="text-center mt-12">
+                            <a 
+                                href="https://mesbahzadeh.pythonanywhere.com/courses"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-earth-primary text-white rounded-xl md:rounded-2xl font-bold hover:bg-earth-dark transition-all shadow-lg hover:shadow-xl active:scale-95"
+                                aria-label="مشاهده همه دوره‌ها"
+                            >
+                                مشاهده همه دوره‌ها در آموزشگاه
+                                <ExternalLink size={18} />
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
         const Portfolio = () => {
             const [filter, setFilter] = useState('all');
             const filteredProjects = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
             const isMobile = useIsMobile();
 
             return (
-                <section id="portfolio" className="py-16 md:py-24 bg-white relative">
+                <section id="portfolio" className="py-16 md:py-24 bg-earth-cream relative">
                     <div className="container mx-auto px-4 sm:px-6">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6">
                             <div>
@@ -586,8 +878,8 @@
                                 <p className="text-earth-dark/60 text-sm md:text-base">پروژه‌هایی که با عشق و کد ساخته شده‌اند</p>
                             </div>
                             
-                            <div className="flex p-1 bg-earth-cream rounded-lg md:rounded-xl gap-1 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
-                                {['all', 'ai', 'web', 'teaching'].map(cat => (
+                            <div className="flex p-1 bg-white rounded-lg md:rounded-xl gap-1 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
+                                {['all', 'ai', 'web', 'data'].map(cat => (
                                     <button
                                         key={cat}
                                         onClick={() => setFilter(cat)}
@@ -598,7 +890,7 @@
                                         }`}
                                         aria-label={`فیلتر ${cat}`}
                                     >
-                                        {{'all': 'همه', 'ai': 'هوش مصنوعی', 'web': 'وب', 'teaching': 'آموزش'}[cat]}
+                                        {{'all': 'همه', 'ai': 'هوش مصنوعی', 'web': 'وب', 'data': 'علم داده'}[cat]}
                                     </button>
                                 ))}
                             </div>
@@ -606,7 +898,7 @@
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                             {filteredProjects.map((project, idx) => (
-                                <div key={idx} className="group bg-earth-cream rounded-2xl md:rounded-[2rem] overflow-hidden border border-earth-dark/5 hover:border-earth-primary/30 transition-all duration-300 hover:shadow-xl md:hover:shadow-2xl flex flex-col h-full">
+                                <div key={idx} className="group bg-white rounded-2xl md:rounded-[2rem] overflow-hidden border border-earth-dark/5 hover:border-earth-primary/30 transition-all duration-300 hover:shadow-xl md:hover:shadow-2xl flex flex-col h-full">
                                     <div className="h-48 md:h-56 bg-earth-dark relative overflow-hidden flex items-center justify-center group">
                                         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
                                         <div className="absolute inset-0 bg-gradient-to-t from-earth-dark to-transparent opacity-80"></div>
@@ -626,7 +918,7 @@
                                     <div className="p-5 md:p-8 flex-1 flex flex-col">
                                         <div className="flex gap-1 md:gap-2 mb-3 md:mb-4 flex-wrap">
                                             {project.tags.map((tag, i) => (
-                                                <span key={i} className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 md:px-2 md:py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">
+                                                <span key={i} className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 md:px-2 md:py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">
                                                     {tag}
                                                 </span>
                                             ))}
@@ -698,7 +990,7 @@
                                     />
                                     <ContactItem 
                                         icon={Globe} 
-                                        title="وب‌سایت" 
+                                        title="وب‌سایت آموزشگاه" 
                                         value="mesbahzadeh.pythonanywhere.com" 
                                         href="https://mesbahzadeh.pythonanywhere.com" 
                                     />
@@ -828,38 +1120,6 @@
 
         const App = () => {
             useEffect(() => {
-                // Add meta tags for SEO and mobile
-                const viewportMeta = document.querySelector('meta[name="viewport"]');
-                if (viewportMeta) {
-                    viewportMeta.content = "width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes";
-                }
-                
-                // Prevent zoom on double-tap
-                document.addEventListener('touchstart', function(event) {
-                    if (event.touches.length > 1) {
-                        event.preventDefault();
-                    }
-                }, { passive: false });
-                
-                let lastTouchEnd = 0;
-                document.addEventListener('touchend', function(event) {
-                    const now = (new Date()).getTime();
-                    if (now - lastTouchEnd <= 300) {
-                        event.preventDefault();
-                    }
-                    lastTouchEnd = now;
-                }, false);
-                
-                // Load font with font-display: swap
-                const fontLink = document.createElement('link');
-                fontLink.rel = 'stylesheet';
-                fontLink.href = 'https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap';
-                document.head.appendChild(fontLink);
-                
-                // Set lang and dir attributes
-                document.documentElement.lang = 'fa';
-                document.documentElement.dir = 'rtl';
-                
                 // Add structured data for SEO
                 const structuredData = {
                     "@context": "https://schema.org",
@@ -881,9 +1141,12 @@
                 script.text = JSON.stringify(structuredData);
                 document.head.appendChild(script);
                 
+                // Cleanup function
                 return () => {
-                    document.removeEventListener('touchstart', () => {});
-                    document.removeEventListener('touchend', () => {});
+                    const existingScript = document.querySelector('script[type="application/ld+json"]');
+                    if (existingScript) {
+                        existingScript.remove();
+                    }
                 };
             }, []);
 
@@ -894,6 +1157,7 @@
                         <Hero />
                         <About />
                         <Skills />
+                        <Courses />
                         <Portfolio />
                         <Contact />
                     </main>
@@ -907,7 +1171,7 @@
             try {
                 const rootElement = document.getElementById('root');
                 if (rootElement) {
-                    const root = createRoot(rootElement);
+                    const root = ReactDOM.createRoot(rootElement);
                     root.render(<App />);
                 } else {
                     console.error('Root element not found');
@@ -919,6 +1183,9 @@
                         <div>
                             <h1 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: #BC6C25;">خطا در بارگذاری</h1>
                             <p>مشکلی در بارگذاری صفحه پیش آمده است. لطفاً صفحه را رفرش کنید.</p>
+                            <button onclick="window.location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #606C38; color: white; border: none; border-radius: 0.5rem; cursor: pointer;">
+                                رفرش صفحه
+                            </button>
                         </div>
                     </div>
                 `;
