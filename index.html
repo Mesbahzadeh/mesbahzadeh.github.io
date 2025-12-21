@@ -2,34 +2,15 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>مهران مصباح‌زاده | مهندس هوش مصنوعی و مدرس | متخصص پایتون و علم داده</title>
-    <meta name="description" content="پورتفولیو حرفه‌ای مهران مصباح‌زاده، متخصص هوش مصنوعی، یادگیری ماشین، پایتون و علم داده با بیش از ۸ سال تجربه">
-    <meta name="keywords" content="هوش مصنوعی, یادگیری ماشین, پایتون, علم داده, آموزش برنامه‌نویسی, مهران مصباح‌زاده">
-    <meta name="author" content="مهران مصباح‌زاده">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهران مصباح‌زاده | مهندس هوش مصنوعی و مدرس</title>
+    <meta name="description" content="پورتفولیو حرفه‌ای مهران مصباح‌زاده، متخصص هوش مصنوعی، یادگیری ماشین، پایتون و علم داده">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
-
-    <!-- Fonts: Vazirmatn -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
-                screens: {
-                    'xs': '475px',
-                    'sm': '640px',
-                    'md': '768px',
-                    'lg': '1024px',
-                    'xl': '1280px',
-                    '2xl': '1536px',
-                },
                 extend: {
                     colors: {
                         earth: {
@@ -41,31 +22,16 @@
                         }
                     },
                     fontFamily: {
-                        sans: ['Vazirmatn', 'system-ui', '-apple-system', 'sans-serif'],
-                    },
-                    fontSize: {
-                        'xxs': '0.625rem',
+                        sans: ['Vazirmatn', 'system-ui', 'sans-serif'],
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
-                        'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                        'blob': 'blob 7s infinite',
                         'fade-in': 'fadeIn 0.5s ease-out forwards',
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-10px)' },
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(20px, -30px) scale(1.1)' },
-                            '66%': { transform: 'translate(-10px, 10px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
                         },
                         fadeIn: {
                             '0%': { opacity: '0' },
@@ -76,73 +42,62 @@
             }
         }
     </script>
-
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* Custom Scrollbar */
-        @media (min-width: 768px) {
-            ::-webkit-scrollbar { width: 8px; }
-            ::-webkit-scrollbar-track { background: #FEFAE0; }
-            ::-webkit-scrollbar-thumb { background: #606C38; border-radius: 4px; }
-            ::-webkit-scrollbar-thumb:hover { background: #283618; }
-        }
-        
-        /* Base Styles */
         * {
-            -webkit-tap-highlight-color: transparent;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
+            font-family: 'Vazirmatn', sans-serif;
             background-color: #FEFAE0;
             color: #283618;
             overflow-x: hidden;
-            min-height: 100vh;
+        }
+        
+        .container {
             width: 100%;
-            position: relative;
-            font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
         
-        /* Fix for Mobile Overflow */
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
         }
         
-        /* Image Optimization */
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
         }
         
-        /* Touch-friendly buttons */
-        button, 
-        a[role="button"] {
-            min-height: 44px;
-            min-width: 44px;
+        .section-padding {
+            padding: 4rem 1rem;
         }
         
-        /* Glassmorphism */
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 1rem;
+            }
+        }
+        
         .glass {
             background: rgba(254, 250, 224, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(40, 54, 24, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(40, 54, 24, 0.1);
         }
         
-        .glass-dark {
-            background: rgba(40, 54, 24, 0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Loading Animation */
         .loading-spinner {
             width: 50px;
             height: 50px;
@@ -157,1042 +112,863 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* Utility Classes */
-        .container {
-            width: 100%;
-            margin-right: auto;
-            margin-left: auto;
-            padding-right: 1rem;
-            padding-left: 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .container {
-                max-width: 640px;
-                padding-right: 1.5rem;
-                padding-left: 1.5rem;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .container {
-                max-width: 768px;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .container {
-                max-width: 1024px;
-                padding-right: 2rem;
-                padding-left: 2rem;
-            }
-        }
-        
-        @media (min-width: 1280px) {
-            .container {
-                max-width: 1280px;
-            }
-        }
-        
-        @media (min-width: 1536px) {
-            .container {
-                max-width: 1536px;
-            }
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <noscript>
-        <div style="padding: 2rem; text-align: center; background: #FEFAE0; color: #283618;">
-            <h2>⚠️ جاوااسکریپت ضروری است</h2>
-            <p>برای مشاهده صحیح سایت، لطفاً جاوااسکریپت مرورگر خود را فعال کنید.</p>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass py-4 shadow-sm">
+        <div class="container flex justify-between items-center">
+            <div class="text-xl font-black text-earth-dark flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-earth-rust animate-pulse"></span>
+                مهران <span class="text-earth-rust">مصباح‌زاده</span>
+            </div>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-earth-dark p-2">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+            
+            <div class="hidden md:flex gap-6 items-center">
+                <a href="#home" class="text-earth-dark hover:text-earth-rust font-bold text-sm">خانه</a>
+                <a href="#about" class="text-earth-dark hover:text-earth-rust font-bold text-sm">درباره من</a>
+                <a href="#skills" class="text-earth-dark hover:text-earth-rust font-bold text-sm">مهارت‌ها</a>
+                <a href="#courses" class="text-earth-dark hover:text-earth-rust font-bold text-sm">دوره‌ها</a>
+                <a href="#portfolio" class="text-earth-dark hover:text-earth-rust font-bold text-sm">نمونه کارها</a>
+                <a href="#contact" class="text-earth-dark hover:text-earth-rust font-bold text-sm">تماس</a>
+                <a href="#contact" class="px-4 py-2 bg-earth-dark text-earth-cream rounded-full text-sm font-bold hover:bg-earth-primary transition-all">
+                    شروع همکاری
+                </a>
+            </div>
         </div>
-    </noscript>
- 
-    <div id="root">
-        <div style="padding: 2rem; text-align: center; background: #FEFAE0; color: #283618; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <div class="loading-spinner mb-4"></div>
-            <h1 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">در حال بارگذاری...</h1>
-            <p style="color: #606C38;">لطفاً چند لحظه صبر کنید</p>
-        </div>
-    </div> 
-
-    <!-- React and Babel -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
-
-    <script type="text/babel">
-        // استفاده از React و ReactDOM از CDN
-        const { useState, useEffect } = React;
-        const ReactDOM = window.ReactDOM;
         
-        // استفاده از آیکون‌ها از Lucide
-        const {
-            Menu, X, ArrowLeft, Github, Linkedin, Mail, 
-            Code, Brain, Layers, LineChart, Globe, Database, 
-            Server, Cpu, BookOpen, ExternalLink,
-            Phone, Send, Instagram, Twitter, Youtube,
-            Video, Award, Users, Clock, ChevronLeft,
-            Image, BarChart3, Smartphone, Cloud, Terminal
-        } = lucideReact;
-
-        // --- Data Definitions ---
-        const NAV_ITEMS = [
-            { label: 'خانه', href: '#home' },
-            { label: 'درباره من', href: '#about' },
-            { label: 'مهارت‌ها', href: '#skills' },
-            { label: 'دوره‌ها', href: '#courses' },
-            { label: 'نمونه کارها', href: '#portfolio' },
-            { label: 'تماس', href: '#contact' },
-        ];
-
-        const SKILLS = [
-            { name: 'Python', icon: Code, category: 'AI', level: 95 },
-            { name: 'TensorFlow & Keras', icon: Brain, category: 'AI', level: 90 },
-            { name: 'PyTorch', icon: Layers, category: 'AI', level: 85 },
-            { name: 'Data Science', icon: LineChart, category: 'AI', level: 92 },
-            { name: 'Django & Flask', icon: Globe, category: 'Web', level: 88 },
-            { name: 'PostgreSQL', icon: Database, category: 'Web', level: 85 },
-            { name: 'FastAPI', icon: Server, category: 'Web', level: 80 },
-            { name: 'Docker', icon: Cpu, category: 'Web', level: 75 },
-        ];
-
-        const COURSES = [
-            {
-                title: 'پایتون جامع از صفر تا صد',
-                description: 'یادگیری برنامه‌نویسی پایتون با پروژه‌های عملی و ورود به بازار کار',
-                duration: '۶۰ ساعت',
-                students: '۱۲۰۰+',
-                level: 'مبتدی تا پیشرفته',
-                category: 'programming',
-                link: 'https://mesbahzadeh.pythonanywhere.com/courses/python-complete',
-                icon: Code,
-                tags: ['Python', 'برنامه‌نویسی', 'مبتدی']
-            },
-            {
-                title: 'هوش مصنوعی و یادگیری ماشین',
-                description: 'آموزش کامل الگوریتم‌های ML و پیاده‌سازی پروژه‌های واقعی',
-                duration: '۸۰ ساعت',
-                students: '۸۵۰+',
-                level: 'متوسط تا پیشرفته',
-                category: 'ai',
-                link: 'https://mesbahzadeh.pythonanywhere.com/courses/ai-ml',
-                icon: Brain,
-                tags: ['هوش مصنوعی', 'ML', 'TensorFlow']
-            },
-            {
-                title: 'پردازش تصویر با OpenCV و Python',
-                description: 'تشخیص اشیا، چهره و بینایی کامپیوتر با پروژه‌های کاربردی',
-                duration: '۴۵ ساعت',
-                students: '۶۵۰+',
-                level: 'متوسط',
-                category: 'ai',
-                link: 'https://mesbahzadeh.pythonanywhere.com/courses/computer-vision',
-                icon: Image,
-                tags: ['پردازش تصویر', 'OpenCV', 'بینایی کامپیوتر']
-            },
-            {
-                title: 'علم داده با Python و Pandas',
-                description: 'آنالیز داده، مصورسازی و کار با دیتاست‌های بزرگ',
-                duration: '۵۵ ساعت',
-                students: '۹۰۰+',
-                level: 'متوسط',
-                category: 'data',
-                link: 'https://mesbahzadeh.pythonanywhere.com/courses/data-science',
-                icon: BarChart3,
-                tags: ['علم داده', 'Pandas', 'تحلیل داده']
-            },
-            {
-                title: 'دوره جامع Django Web Development',
-                description: 'ساخت وب اپلیکیشن‌های حرفه‌ای با جنگو و ری‌اکت',
-                duration: '۷۰ ساعت',
-                students: '۱۱۰۰+',
-                level: 'مبتدی تا پیشرفته',
-                category: 'web',
-                link: 'https://mesbahzadeh.pythonanywhere.com/courses/django',
-                icon: Globe,
-                tags: ['Django', 'وب', 'Backend']
-            },
-            {
-                title: 'طراحی رابط کاربری (UI/UX)',
-                description: 'اصول طراحی مدرن، Figma و ساخت پروتوتایپ',
-                duration: '۴۰ ساعت',
-                students: '۷۵۰+',
-                level: 'مبتدی تا متوسط',
-                category: 'design',
-                link: 'https://mesbahzadeh.pythonanywhere.com/courses/ui-ux',
-                icon: Smartphone,
-                tags: ['UI/UX', 'Figma', 'طراحی']
-            },
-            {
-                title: 'SQL و پایگاه داده پیشرفته',
-                description: 'مدیریت دیتابیس، کوئری‌های پیچیده و بهینه‌سازی',
-                duration: '۳۵ ساعت',
-                students: '۸۰۰+',
-                level: 'متوسط',
-                category: 'data',
-                link: 'https://mesbahzadeh.pythonanywhere.com/courses/sql-advanced',
-                icon: Database,
-                tags: ['SQL', 'دیتابیس', 'PostgreSQL']
-            },
-            {
-                title: 'دپلوی مدل‌های ML با FastAPI',
-                description: 'سرویس‌دهی مدل‌های یادگیری ماشین در تولید',
-                duration: '۳۰ ساعت',
-                students: '۵۰۰+',
-                level: 'پیشرفته',
-                category: 'ai',
-                link: 'https://mesbahzadeh.pythonanywhere.com/courses/ml-deployment',
-                icon: Server,
-                tags: ['FastAPI', 'Deployment', 'MLOps']
-            }
-        ];
-
-        const PROJECTS = [
-            {
-                title: 'سیستم تشخیص تصویر CNN',
-                description: 'طراحی مدل‌های یادگیری عمیق پیشرفته برای طبقه‌بندی تصاویر پزشکی با دقت ۹۸٪.',
-                tags: ['Python', 'TensorFlow', 'Computer Vision', 'CNN'],
-                icon: Brain,
-                category: 'ai',
-                link: '#'
-            },
-            {
-                title: 'پلتفرم آموزش آنلاین (LMS)',
-                description: 'پیاده‌سازی کامل سیستم مدیریت یادگیری با قابلیت آزمون آنلاین و صدور مدرک خودکار.',
-                tags: ['Django', 'React', 'PostgreSQL', 'REST API'],
-                icon: Globe,
-                category: 'web',
-                link: 'https://mesbahzadeh.pythonanywhere.com'
-            },
-            {
-                title: 'بات تحلیلگر بورس',
-                description: 'ربات هوشمند تحلیل تکنیکال و فاندامنتال بازار سرمایه با استفاده از الگوریتم‌های هوش مصنوعی.',
-                tags: ['Pandas', 'Sklearn', 'Telegram API', 'Time Series'],
-                icon: LineChart,
-                category: 'ai',
-                link: '#'
-            },
-            {
-                title: 'سیستم تشخیص چهره Real-time',
-                description: 'سیستم تشخیص هویت بلادرنگ با استفاده از FaceNet و OpenCV.',
-                tags: ['Python', 'OpenCV', 'Face Recognition', 'Real-time'],
-                icon: Cpu,
-                category: 'ai',
-                link: '#'
-            },
-            {
-                title: 'اپلیکیشن مدیریت پروژه',
-                description: 'وب اپلیکیشن کامل برای مدیریت تیم و پروژه با تخته‌های Kanban.',
-                tags: ['Vue.js', 'Node.js', 'MongoDB', 'WebSocket'],
-                icon: Layers,
-                category: 'web',
-                link: '#'
-            },
-            {
-                title: 'پلتفرم تحلیل احساسات متن',
-                description: 'تحلیل احساسات نظرات کاربران با مدل‌های Transformer پیشرفته.',
-                tags: ['NLP', 'BERT', 'Transformers', 'Sentiment Analysis'],
-                icon: Brain,
-                category: 'ai',
-                link: '#'
-            },
-            {
-                title: 'سیستم پیشنهاددهنده فیلم',
-                description: 'سیستم Recommendation Engine برای پیشنهاد فیلم بر اساس سلیقه کاربر.',
-                tags: ['Machine Learning', 'Collaborative Filtering', 'Flask'],
-                icon: Video,
-                category: 'ai',
-                link: '#'
-            },
-            {
-                title: 'داشبورد آنالیز داده‌های بزرگ',
-                description: 'داشبورد تعاملی برای مصورسازی و تحلیل Big Data.',
-                tags: ['React', 'D3.js', 'Big Data', 'Data Visualization'],
-                icon: BarChart3,
-                category: 'data',
-                link: '#'
-            },
-            {
-                title: 'API سرویس هوش مصنوعی',
-                description: 'سرویس ابری برای ارائه قابلیت‌های AI به صورت API.',
-                tags: ['FastAPI', 'Docker', 'AWS', 'Microservices'],
-                icon: Cloud,
-                category: 'web',
-                link: '#'
-            },
-            {
-                title: 'اپ موبایل یادگیری زبان',
-                description: 'اپلیکیشن موبایل آموزش زبان با قابلیت تشخیص صدا و تمرین تعاملی.',
-                tags: ['React Native', 'Firebase', 'Speech Recognition'],
-                icon: Smartphone,
-                category: 'web',
-                link: '#'
-            },
-            {
-                title: 'سیستم تشخیص بیماری از تصاویر X-ray',
-                description: 'مدل Deep Learning برای تشخیص خودکار بیماری‌ها از تصاویر پزشکی.',
-                tags: ['PyTorch', 'Medical AI', 'Image Classification'],
-                icon: Brain,
-                category: 'ai',
-                link: '#'
-            },
-            {
-                title: 'پنل مدیریت کسب‌وکار',
-                description: 'پنل مدیریت یکپارچه برای کسب‌وکارهای کوچک و متوسط.',
-                tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Stripe'],
-                icon: Terminal,
-                category: 'web',
-                link: '#'
-            }
-        ];
-
-        const STATS = [
-            { value: '+۸', label: 'سال تجربه' },
-            { value: '+۱۰۰۰', label: 'دانشجو' },
-            { value: '+۵۰', label: 'پروژه موفق' },
-            { value: '+۱۵', label: 'دوره آموزشی' },
-        ];
-
-        // --- Components ---
-
-        const useIsMobile = () => {
-            const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-            useEffect(() => {
-                const handleResize = () => {
-                    setIsMobile(window.innerWidth < 768);
-                };
-                
-                window.addEventListener('resize', handleResize);
-                return () => window.removeEventListener('resize', handleResize);
-            }, []);
-
-            return isMobile;
-        };
-
-        const SocialLink = ({ href, icon: Icon, label }) => (
-            <a 
-                href={href} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-earth-cream hover:bg-earth-sand hover:text-earth-dark hover:scale-110 transition-all duration-300 active:scale-95"
-                aria-label={label}
-            >
-                <Icon size={18} />
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-earth-dark/95 backdrop-blur-xl z-40 flex-col items-center justify-center gap-6 hidden">
+            <button id="close-menu" class="absolute top-6 left-6 text-earth-cream p-2">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <a href="#home" class="text-2xl text-earth-cream font-bold hover:text-earth-sand py-3">خانه</a>
+            <a href="#about" class="text-2xl text-earth-cream font-bold hover:text-earth-sand py-3">درباره من</a>
+            <a href="#skills" class="text-2xl text-earth-cream font-bold hover:text-earth-sand py-3">مهارت‌ها</a>
+            <a href="#courses" class="text-2xl text-earth-cream font-bold hover:text-earth-sand py-3">دوره‌ها</a>
+            <a href="#portfolio" class="text-2xl text-earth-cream font-bold hover:text-earth-sand py-3">نمونه کارها</a>
+            <a href="#contact" class="text-2xl text-earth-cream font-bold hover:text-earth-sand py-3">تماس</a>
+            <a href="#contact" class="mt-4 px-8 py-3 bg-earth-sand text-earth-dark rounded-full text-lg font-bold hover:bg-earth-primary">
+                شروع همکاری
             </a>
-        );
+        </div>
+    </nav>
 
-        const ContactItem = ({ icon: Icon, title, value, href }) => (
-            <div className="flex items-center gap-3 md:gap-4 group">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-earth-primary/20 rounded-lg md:rounded-xl flex items-center justify-center text-earth-sand group-hover:bg-earth-sand group-hover:text-earth-dark transition-colors">
-                    <Icon size={20} />
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 pb-12 px-4 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-earth-primary/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 left-0 w-48 h-48 md:w-64 md:h-64 bg-earth-rust/10 rounded-full blur-3xl"></div>
+        
+        <div class="container grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="text-center lg:text-right space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-earth-cream border border-earth-primary/20 rounded-full text-earth-primary text-sm font-bold">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-earth-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-earth-primary"></span>
+                    </span>
+                    آماده همکاری در پروژه‌های جدید
                 </div>
-                <div>
-                    <h4 className="font-bold text-earth-cream text-base md:text-lg">{title}</h4>
-                    <a 
-                        href={href} 
-                        className="text-earth-cream/60 group-hover:text-earth-sand transition-colors font-sans dir-ltr block text-left text-sm md:text-base break-all"
-                        aria-label={`${title}: ${value}`}
-                    >
-                        {value}
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-earth-dark leading-tight">
+                    مهندسی آینده با
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-earth-primary to-earth-rust block">هوش مصنوعی</span>
+                </h1>
+                
+                <p class="text-lg text-earth-dark/70 max-w-2xl mx-auto lg:mx-0">
+                    من مهران مصباح‌زاده هستم؛ متخصص یادگیری ماشین و مدرس برنامه‌نویسی.
+                    به شما کمک می‌کنم تا ایده‌هایتان را به واقعیت دیجیتال تبدیل کنید.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#portfolio" class="px-6 py-3 bg-earth-dark text-earth-cream rounded-xl font-bold hover:bg-earth-primary transition-all shadow-lg flex items-center justify-center gap-2">
+                        مشاهده پروژه‌ها
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="#courses" class="px-6 py-3 bg-white/50 border-2 border-earth-dark/10 text-earth-dark rounded-xl font-bold hover:bg-white transition-all flex items-center justify-center">
+                        مشاهده دوره‌ها
+                    </a>
+                </div>
+
+                <div class="flex gap-4 justify-center lg:justify-start pt-6">
+                    <a href="https://github.com/mesbahzadeh" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-earth-dark/10 text-earth-dark hover:bg-earth-sand hover:text-earth-dark transition-all">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/mehran-mesbahzadeh" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-earth-dark/10 text-earth-dark hover:bg-earth-sand hover:text-earth-dark transition-all">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:mehran.mesbahzadeh@yahoo.com" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-earth-dark/10 text-earth-dark hover:bg-earth-sand hover:text-earth-dark transition-all">
+                        <i class="fas fa-envelope"></i>
                     </a>
                 </div>
             </div>
-        );
 
-        const InputGroup = ({ label, type, dir, name, value, onChange, required }) => (
-            <div className="space-y-2">
-                <label className="text-xs md:text-sm font-bold text-earth-cream/80 block">{label}</label>
-                <input 
-                    type={type} 
-                    dir={dir}
-                    name={name}
-                    value={value}
-                    onChange={onChange}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-earth-cream/10 focus:border-earth-sand focus:bg-white/10 outline-none transition-all text-earth-cream text-sm md:text-base"
-                    required={required}
-                    aria-label={label}
-                />
-            </div>
-        );
-
-        const Navbar = () => {
-            const [isOpen, setIsOpen] = useState(false);
-            const [scrolled, setScrolled] = useState(false);
-            const isMobile = useIsMobile();
-
-            useEffect(() => {
-                const handleScroll = () => setScrolled(window.scrollY > 20);
-                window.addEventListener('scroll', handleScroll);
-                return () => window.removeEventListener('scroll', handleScroll);
-            }, []);
-
-            useEffect(() => {
-                if (isOpen && isMobile) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = 'unset';
-                }
-                return () => {
-                    document.body.style.overflow = 'unset';
-                };
-            }, [isOpen, isMobile]);
-
-            return (
-                <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass py-3 shadow-sm' : 'bg-transparent py-4 md:py-6'}`}>
-                    <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
-                        <div className="text-xl md:text-2xl font-black text-earth-dark tracking-tighter flex items-center gap-2">
-                            <span className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-earth-rust animate-pulse"></span>
-                            مهران <span className="text-earth-rust">مصباح‌زاده</span>
-                        </div>
-
-                        <div className="hidden md:flex gap-6 lg:gap-8 items-center">
-                            {NAV_ITEMS.map((item) => (
-                                <a 
-                                    key={item.label} 
-                                    href={item.href} 
-                                    className="text-earth-dark/80 hover:text-earth-rust font-bold text-sm transition-colors relative group px-2 py-1"
-                                    aria-label={item.label}
-                                >
-                                    {item.label}
-                                    <span className="absolute -bottom-1 right-0 w-0 h-0.5 bg-earth-rust transition-all duration-300 group-hover:w-full"></span>
-                                </a>
-                            ))}
-                            <a 
-                                href="#contact" 
-                                className="px-4 py-2 md:px-5 md:py-2 bg-earth-dark text-earth-cream rounded-full text-sm font-bold hover:bg-earth-primary transition-all shadow-lg hover:shadow-xl active:scale-95 min-h-[44px] flex items-center justify-center"
-                                aria-label="شروع همکاری"
-                            >
-                                شروع همکاری
-                            </a>
-                        </div>
-
-                        <button 
-                            className="md:hidden text-earth-dark p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                            onClick={() => setIsOpen(!isOpen)}
-                            aria-label={isOpen ? "بستن منو" : "باز کردن منو"}
-                            aria-expanded={isOpen}
-                        >
-                            {isOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-
-                        <div 
-                            className={`fixed inset-0 bg-earth-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-6 transition-all duration-500 md:hidden ${
-                                isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-                            }`}
-                        >
-                            <button 
-                                className="absolute top-6 left-6 text-earth-cream min-h-[44px] min-w-[44px] flex items-center justify-center"
-                                onClick={() => setIsOpen(false)}
-                                aria-label="بستن منو"
-                            >
-                                <X size={32} />
-                            </button>
-                            {NAV_ITEMS.map((item) => (
-                                <a 
-                                    key={item.label} 
-                                    href={item.href} 
-                                    className="text-2xl text-earth-cream font-bold hover:text-earth-sand py-3 px-6 transition-colors text-center w-full max-w-xs"
-                                    onClick={() => setIsOpen(false)}
-                                    aria-label={item.label}
-                                >
-                                    {item.label}
-                                </a>
-                            ))}
-                            <a 
-                                href="#contact" 
-                                className="mt-4 px-8 py-3 bg-earth-sand text-earth-dark rounded-full text-lg font-bold hover:bg-earth-primary hover:text-white transition-colors min-h-[44px] flex items-center justify-center"
-                                onClick={() => setIsOpen(false)}
-                                aria-label="شروع همکاری"
-                            >
-                                شروع همکاری
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            );
-        };
-
-        const Hero = () => {
-            const isMobile = useIsMobile();
-
-            return (
-                <section id="home" className="min-h-screen flex items-center justify-center pt-20 md:pt-24 pb-12 px-4 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[500px] md:h-[500px] bg-earth-primary/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob"></div>
-                    <div className="absolute top-0 left-0 w-[150px] h-[150px] md:w-[500px] md:h-[500px] bg-earth-rust/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob" style={{animationDelay: '2s'}}></div>
-                    <div className="absolute -bottom-16 left-4 md:-bottom-32 md:left-20 w-[180px] h-[180px] md:w-[500px] md:h-[500px] bg-earth-sand/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob" style={{animationDelay: '4s'}}></div>
-
-                    <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
-                        <div className="order-2 lg:order-1 text-center lg:text-right space-y-6 md:space-y-8">
-                            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-earth-cream border border-earth-primary/20 rounded-full text-earth-primary text-xs md:text-sm font-bold shadow-sm">
-                                <span className="relative flex h-2 w-2 md:h-3 md:w-3">
-                                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-earth-primary opacity-75"></span>
-                                  <span className="relative inline-flex rounded-full h-2 w-2 md:h-3 md:w-3 bg-earth-primary"></span>
-                                </span>
-                                آماده همکاری در پروژه‌های جدید
-                            </div>
-                            
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-earth-dark leading-[1.2] md:leading-[1.15]">
-                                مهندسی آینده با
-                                <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-earth-primary to-earth-rust">هوش مصنوعی</span>
-                            </h1>
-                            
-                            <p className="text-base md:text-xl text-earth-dark/70 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                                من مهران مصباح‌زاده هستم؛ متخصص یادگیری ماشین و مدرس برنامه‌نویسی.
-                                {!isMobile && <br />}
-                                به شما کمک می‌کنم تا ایده‌هایتان را به واقعیت دیجیتال تبدیل کنید.
-                            </p>
-
-                            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start pt-4">
-                                <a 
-                                    href="#portfolio" 
-                                    className="group px-6 py-3 md:px-8 md:py-4 bg-earth-dark text-earth-cream rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-earth-primary transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 min-h-[50px] active:scale-95"
-                                    aria-label="مشاهده پروژه‌ها"
-                                >
-                                    مشاهده پروژه‌ها
-                                    <ArrowLeft className="group-hover:-translate-x-1 transition-transform" size={18} />
-                                </a>
-                                <a 
-                                    href="#courses" 
-                                    className="px-6 py-3 md:px-8 md:py-4 bg-white/50 border-2 border-earth-dark/10 text-earth-dark rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-white hover:border-earth-dark transition-all flex items-center justify-center min-h-[50px] active:scale-95"
-                                    aria-label="مشاهده دوره‌ها"
-                                >
-                                    مشاهده دوره‌ها
-                                </a>
-                            </div>
-
-                            <div className="flex gap-4 md:gap-6 justify-center lg:justify-start pt-6 border-t border-earth-dark/5">
-                                <SocialLink href="https://github.com/mesbahzadeh" icon={Github} label="GitHub" />
-                                <SocialLink href="https://linkedin.com/in/mehran-mesbahzadeh" icon={Linkedin} label="LinkedIn" />
-                                <SocialLink href="mailto:mehran.mesbahzadeh@yahoo.com" icon={Mail} label="Email" />
-                            </div>
-                        </div>
-
-                        <div className="order-1 lg:order-2 flex justify-center relative animate-float">
-                            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px]">
-                                <div className="absolute inset-0 border-2 md:border-[3px] border-earth-rust/20 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] animate-blob"></div>
-                                <div className="absolute inset-2 md:inset-4 border-2 md:border-[3px] border-earth-primary/20 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-blob" style={{animationDirection: 'reverse'}}></div>
-                                
-                                <div className="absolute inset-4 md:inset-8 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] overflow-hidden shadow-xl md:shadow-2xl bg-earth-sand/20">
-                                    <img 
-                                        src="https://mesbahzadeh.pythonanywhere.com/staticfiles/media/teachers/profile/mehran.jpg" 
-                                        alt="مهران مصباح‌زاده"
-                                        className="w-full h-full object-cover transform scale-105 hover:scale-100 transition-transform duration-700"
-                                        loading="eager"
-                                        width="500"
-                                        height="500"
-                                    />
-                                </div>
-                                
-                                <div className="absolute bottom-6 -right-2 md:bottom-10 md:-right-4 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg flex items-center gap-2 animate-bounce" style={{animationDuration: '3s'}}>
-                                    <div className="bg-earth-rust/10 p-1.5 md:p-2 rounded-lg md:rounded-xl text-earth-rust">
-                                        <Code size={18} />
-                                    </div>
-                                    <div className="text-right">
-                                        <div className="text-xxs md:text-xs text-earth-dark/60 font-bold">تخصص</div>
-                                        <div className="text-sm md:text-base text-earth-dark font-black">AI Developer</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            );
-        };
-
-        const About = () => {
-            return (
-                <section id="about" className="py-16 md:py-24 bg-earth-dark text-earth-cream relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+            <div class="flex justify-center relative animate-float">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                    <div class="absolute inset-0 border-2 border-earth-rust/20 rounded-full animate-pulse"></div>
                     
-                    <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                        <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
-                            <div className="space-y-6 md:space-y-8">
-                                <div className="inline-block px-3 py-1 md:px-4 md:py-1 bg-earth-sand/20 text-earth-sand rounded-full text-xs md:text-sm font-bold border border-earth-sand/20">
-                                    درباره من
-                                </div>
-                                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                                    ترکیب خلاقیت و <span className="text-earth-sand border-b-4 border-earth-sand/30">تکنولوژی</span>
-                                </h2>
-                                <p className="text-base md:text-lg text-earth-cream/70 leading-loose text-justify">
-                                    من مهران مصباح‌زاده هستم، با بیش از ۸ سال تجربه در دنیای برنامه‌نویسی.
-                                    تمرکز اصلی من بر روی هوش مصنوعی و یادگیری عمیق است، اما علاقه زیادی به توسعه وب و آموزش دارم.
-                                    هدف من ساده است: استفاده از تکنولوژی برای حل مسائل پیچیده و آموزش نسل بعدی توسعه‌دهندگان ایران.
-                                </p>
-                                
-                                <div className="grid grid-cols-2 gap-4 md:gap-6 pt-4">
-                                    {STATS.map((stat, idx) => (
-                                        <div key={idx} className="p-4 md:p-6 bg-white/5 rounded-xl md:rounded-2xl border border-white/10 hover:bg-white/10 transition-colors backdrop-blur-sm">
-                                            <div className="text-2xl sm:text-3xl md:text-4xl font-black text-earth-sand mb-1">{stat.value}</div>
-                                            <div className="text-xs md:text-sm text-earth-cream/60 font-medium">{stat.label}</div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                    <div class="absolute inset-4 rounded-full overflow-hidden shadow-2xl">
+                        <img 
+                            src="https://mesbahzadeh.pythonanywhere.com/staticfiles/media/teachers/profile/mehran.jpg" 
+                            alt="مهران مصباح‌زاده"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                            <div className="relative hidden lg:block">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="space-y-4 translate-y-12">
-                                        <div className="h-64 bg-earth-primary/30 rounded-3xl w-full backdrop-blur-md border border-white/10 animate-float" style={{animationDelay: '0s'}}></div>
-                                        <div className="h-40 bg-earth-rust/30 rounded-3xl w-full backdrop-blur-md border border-white/10 animate-float" style={{animationDelay: '1s'}}></div>
-                                    </div>
-                                    <div className="space-y-4">
-                                        <div className="h-40 bg-earth-sand/30 rounded-3xl w-full backdrop-blur-md border border-white/10 animate-float" style={{animationDelay: '2s'}}></div>
-                                        <div className="h-64 bg-white/10 rounded-3xl w-full backdrop-blur-md border border-white/10 animate-float" style={{animationDelay: '3s'}}></div>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- About Section -->
+    <section id="about" class="bg-earth-dark text-earth-cream section-padding">
+        <div class="container">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-block px-3 py-1 bg-earth-sand/20 text-earth-sand rounded-full text-sm font-bold">
+                        درباره من
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold">
+                        ترکیب خلاقیت و <span class="text-earth-sand">تکنولوژی</span>
+                    </h2>
+                    <p class="text-earth-cream/70 leading-loose">
+                        من مهران مصباح‌زاده هستم، با بیش از ۸ سال تجربه در دنیای برنامه‌نویسی.
+                        تمرکز اصلی من بر روی هوش مصنوعی و یادگیری عمیق است، اما علاقه زیادی به توسعه وب و آموزش دارم.
+                        هدف من ساده است: استفاده از تکنولوژی برای حل مسائل پیچیده و آموزش نسل بعدی توسعه‌دهندگان ایران.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <div class="text-3xl font-black text-earth-sand">+۸</div>
+                            <div class="text-sm text-earth-cream/60">سال تجربه</div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <div class="text-3xl font-black text-earth-sand">+۱۰۰۰</div>
+                            <div class="text-sm text-earth-cream/60">دانشجو</div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <div class="text-3xl font-black text-earth-sand">+۵۰</div>
+                            <div class="text-sm text-earth-cream/60">پروژه موفق</div>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-xl border border-white/10">
+                            <div class="text-3xl font-black text-earth-sand">+۱۵</div>
+                            <div class="text-sm text-earth-cream/60">دوره آموزشی</div>
                         </div>
                     </div>
-                </section>
-            );
-        };
-
-        const Skills = () => {
-            const isMobile = useIsMobile();
-
-            return (
-                <section id="skills" className="py-16 md:py-24 bg-earth-cream relative">
-                    <div className="container mx-auto px-4 sm:px-6">
-                        <div className="text-center mb-10 md:mb-16 space-y-3 md:space-y-4">
-                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-earth-dark">جعبه ابزار <span className="text-earth-rust">تخصصی</span></h2>
-                            <p className="text-earth-dark/60 max-w-xl mx-auto text-sm md:text-base">
-                                تکنولوژی‌هایی که برای ساخت محصولات دیجیتال استفاده می‌کنم
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                            {SKILLS.map((skill, idx) => (
-                                <div key={idx} className="group p-4 md:p-8 bg-white rounded-2xl md:rounded-[2rem] shadow-sm hover:shadow-xl md:hover:shadow-2xl hover:shadow-earth-primary/10 transition-all duration-500 border border-earth-dark/5 hover:-translate-y-1 md:hover:-translate-y-2 relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-16 h-16 md:w-24 md:h-24 bg-earth-primary/5 rounded-bl-2xl md:rounded-bl-[4rem] transition-colors group-hover:bg-earth-primary/10"></div>
-                                    
-                                    <div className="w-12 h-12 md:w-16 md:h-16 bg-earth-cream rounded-xl md:rounded-2xl flex items-center justify-center text-earth-dark mb-4 md:mb-6 group-hover:bg-earth-dark group-hover:text-earth-cream transition-colors shadow-inner">
-                                        <skill.icon size={isMobile ? 24 : 32} strokeWidth={1.5} />
-                                    </div>
-                                    
-                                    <h3 className="text-lg md:text-xl font-bold text-earth-dark mb-1 md:mb-2">{skill.name}</h3>
-                                    <p className="text-xs md:text-sm text-earth-dark/50 font-medium mb-3 md:mb-4">
-                                        {skill.category === 'AI' ? 'هوش مصنوعی' : 'توسعه وب'}
-                                    </p>
-                                    
-                                    <div className="w-full bg-earth-dark/5 h-1.5 rounded-full overflow-hidden">
-                                        <div 
-                                            className="bg-earth-primary h-full rounded-full transition-all duration-1000 group-hover:bg-earth-rust" 
-                                            style={{width: `${skill.level}%`}}
-                                        ></div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                </div>
+                
+                <div class="hidden lg:grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="h-48 bg-earth-primary/30 rounded-3xl backdrop-blur-sm border border-white/10"></div>
+                        <div class="h-32 bg-earth-rust/30 rounded-3xl backdrop-blur-sm border border-white/10"></div>
                     </div>
-                </section>
-            );
-        };
+                    <div class="space-y-4 mt-8">
+                        <div class="h-32 bg-earth-sand/30 rounded-3xl backdrop-blur-sm border border-white/10"></div>
+                        <div class="h-48 bg-white/10 rounded-3xl backdrop-blur-sm border border-white/10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        const Courses = () => {
-            const [filter, setFilter] = useState('all');
-            
-            const filteredCourses = filter === 'all' 
-                ? COURSES 
-                : COURSES.filter(course => course.category === filter);
-            
-            const categories = [
-                { id: 'all', name: 'همه دوره‌ها' },
-                { id: 'programming', name: 'برنامه‌نویسی' },
-                { id: 'ai', name: 'هوش مصنوعی' },
-                { id: 'data', name: 'علم داده' },
-                { id: 'web', name: 'توسعه وب' },
-                { id: 'design', name: 'طراحی' }
-            ];
+    <!-- Skills Section -->
+    <section id="skills" class="bg-earth-cream section-padding">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-earth-dark mb-4">جعبه ابزار <span class="text-earth-rust">تخصصی</span></h2>
+                <p class="text-earth-dark/60 max-w-xl mx-auto">
+                    تکنولوژی‌هایی که برای ساخت محصولات دیجیتال استفاده می‌کنم
+                </p>
+            </div>
 
-            return (
-                <section id="courses" className="py-16 md:py-24 bg-white relative">
-                    <div className="container mx-auto px-4 sm:px-6">
-                        <div className="text-center mb-10 md:mb-16 space-y-3 md:space-y-4">
-                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-earth-dark">دوره‌های <span className="text-earth-primary">آموزشی</span></h2>
-                            <p className="text-earth-dark/60 max-w-xl mx-auto text-sm md:text-base">
-                                آموزش‌های تخصصی برای ورود به بازار کار فناوری
-                            </p>
-                        </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="group p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-earth-dark/5">
+                    <div class="w-12 h-12 bg-earth-cream rounded-xl flex items-center justify-center text-earth-dark mb-4 group-hover:bg-earth-dark group-hover:text-earth-cream transition-colors">
+                        <i class="fab fa-python text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-earth-dark mb-2">Python</h3>
+                    <p class="text-sm text-earth-dark/50 mb-4">هوش مصنوعی</p>
+                    <div class="w-full bg-earth-dark/5 h-2 rounded-full overflow-hidden">
+                        <div class="bg-earth-primary h-full rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+                
+                <div class="group p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-earth-dark/5">
+                    <div class="w-12 h-12 bg-earth-cream rounded-xl flex items-center justify-center text-earth-dark mb-4 group-hover:bg-earth-dark group-hover:text-earth-cream transition-colors">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-earth-dark mb-2">TensorFlow</h3>
+                    <p class="text-sm text-earth-dark/50 mb-4">هوش مصنوعی</p>
+                    <div class="w-full bg-earth-dark/5 h-2 rounded-full overflow-hidden">
+                        <div class="bg-earth-primary h-full rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                
+                <div class="group p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-earth-dark/5">
+                    <div class="w-12 h-12 bg-earth-cream rounded-xl flex items-center justify-center text-earth-dark mb-4 group-hover:bg-earth-dark group-hover:text-earth-cream transition-colors">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-earth-dark mb-2">Data Science</h3>
+                    <p class="text-sm text-earth-dark/50 mb-4">هوش مصنوعی</p>
+                    <div class="w-full bg-earth-dark/5 h-2 rounded-full overflow-hidden">
+                        <div class="bg-earth-primary h-full rounded-full" style="width: 92%"></div>
+                    </div>
+                </div>
+                
+                <div class="group p-6 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-earth-dark/5">
+                    <div class="w-12 h-12 bg-earth-cream rounded-xl flex items-center justify-center text-earth-dark mb-4 group-hover:bg-earth-dark group-hover:text-earth-cream transition-colors">
+                        <i class="fas fa-globe text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-earth-dark mb-2">Django & Flask</h3>
+                    <p class="text-sm text-earth-dark/50 mb-4">توسعه وب</p>
+                    <div class="w-full bg-earth-dark/5 h-2 rounded-full overflow-hidden">
+                        <div class="bg-earth-primary h-full rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <div className="flex flex-wrap gap-2 justify-center mb-8 md:mb-12">
-                            {categories.map(cat => (
-                                <button
-                                    key={cat.id}
-                                    onClick={() => setFilter(cat.id)}
-                                    className={`px-4 py-2 rounded-full text-sm font-bold transition-all min-h-[44px] ${
-                                        filter === cat.id 
-                                        ? 'bg-earth-dark text-earth-cream shadow-md' 
-                                        : 'bg-earth-cream text-earth-dark/60 hover:text-earth-dark hover:bg-earth-primary/10 border border-earth-dark/10'
-                                    }`}
-                                    aria-label={`فیلتر ${cat.name}`}
-                                >
-                                    {cat.name}
-                                </button>
-                            ))}
-                        </div>
+    <!-- Courses Section -->
+    <section id="courses" class="bg-white section-padding">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-earth-dark mb-4">دوره‌های <span class="text-earth-primary">آموزشی</span></h2>
+                <p class="text-earth-dark/60 max-w-xl mx-auto">
+                    آموزش‌های تخصصی برای ورود به بازار کار فناوری
+                </p>
+            </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                            {filteredCourses.map((course, idx) => (
-                                <div key={idx} className="group bg-earth-cream rounded-2xl md:rounded-[2rem] overflow-hidden border border-earth-dark/5 hover:border-earth-primary/30 transition-all duration-300 hover:shadow-xl md:hover:shadow-2xl flex flex-col h-full">
-                                    <div className="p-5 md:p-8 flex-1 flex flex-col">
-                                        <div className="flex items-start justify-between mb-4">
-                                            <div className="w-12 h-12 md:w-14 md:h-14 bg-earth-primary/10 rounded-xl md:rounded-2xl flex items-center justify-center text-earth-primary group-hover:bg-earth-primary group-hover:text-earth-cream transition-colors">
-                                                <course.icon size={24} />
-                                            </div>
-                                            <span className="text-[10px] md:text-xs font-bold px-2 py-1 bg-earth-sand/20 text-earth-rust rounded-full">
-                                                {course.level}
-                                            </span>
-                                        </div>
-                                        
-                                        <h3 className="text-lg md:text-2xl font-bold text-earth-dark mb-3 group-hover:text-earth-rust transition-colors">
-                                            {course.title}
-                                        </h3>
-                                        
-                                        <p className="text-earth-dark/70 text-sm leading-relaxed mb-6 flex-1">
-                                            {course.description}
-                                        </p>
-                                        
-                                        <div className="flex gap-2 mb-4 flex-wrap">
-                                            {course.tags.map((tag, i) => (
-                                                <span key={i} className="text-[10px] font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-                                        
-                                        <div className="flex justify-between items-center text-xs text-earth-dark/50 border-t border-earth-dark/5 pt-4">
-                                            <div className="flex items-center gap-1">
-                                                <Clock size={14} />
-                                                <span>{course.duration}</span>
-                                            </div>
-                                            <div className="flex items-center gap-1">
-                                                <Users size={14} />
-                                                <span>{course.students}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div className="p-5 md:p-8 pt-0">
-                                        <a 
-                                            href={course.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="block w-full py-3 bg-earth-dark text-earth-cream font-bold text-center rounded-xl hover:bg-earth-primary transition-colors flex items-center justify-center gap-2 group/btn"
-                                            aria-label={`ورود به دوره ${course.title}`}
-                                        >
-                                            مشاهده دوره
-                                            <ChevronLeft className="group-hover/btn:-translate-x-1 transition-transform" size={16} />
-                                        </a>
-                                    </div>
-                                </div>
-                            ))}
+            <div class="flex flex-wrap gap-2 justify-center mb-8">
+                <button class="filter-btn px-4 py-2 bg-earth-dark text-earth-cream rounded-full text-sm font-bold" data-filter="all">همه دوره‌ها</button>
+                <button class="filter-btn px-4 py-2 bg-earth-cream text-earth-dark/60 rounded-full text-sm font-bold hover:bg-earth-primary/10" data-filter="programming">برنامه‌نویسی</button>
+                <button class="filter-btn px-4 py-2 bg-earth-cream text-earth-dark/60 rounded-full text-sm font-bold hover:bg-earth-primary/10" data-filter="ai">هوش مصنوعی</button>
+                <button class="filter-btn px-4 py-2 bg-earth-cream text-earth-dark/60 rounded-full text-sm font-bold hover:bg-earth-primary/10" data-filter="web">توسعه وب</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="course-card bg-earth-cream rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="programming">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-earth-primary/10 rounded-xl flex items-center justify-center text-earth-primary">
+                                <i class="fab fa-python text-2xl"></i>
+                            </div>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-sand/20 text-earth-rust rounded-full">مبتدی تا پیشرفته</span>
                         </div>
                         
-                        <div className="text-center mt-12">
-                            <a 
-                                href="https://mesbahzadeh.pythonanywhere.com/courses"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-earth-primary text-white rounded-xl md:rounded-2xl font-bold hover:bg-earth-dark transition-all shadow-lg hover:shadow-xl active:scale-95"
-                                aria-label="مشاهده همه دوره‌ها"
-                            >
-                                مشاهده همه دوره‌ها در آموزشگاه
-                                <ExternalLink size={18} />
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">پایتون جامع از صفر تا صد</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">یادگیری برنامه‌نویسی پایتون با پروژه‌های عملی و ورود به بازار کار</p>
+                        
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">Python</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">برنامه‌نویسی</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-xs text-earth-dark/50 border-t border-earth-dark/5 pt-4">
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-clock"></i>
+                                <span>۶۰ ساعت</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-user"></i>
+                                <span>۱۲۰۰+ دانشجو</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 pt-0">
+                        <a href="https://mesbahzadeh.pythonanywhere.com/courses/python-complete" target="_blank" class="block w-full py-3 bg-earth-dark text-earth-cream font-bold text-center rounded-xl hover:bg-earth-primary transition-colors">
+                            مشاهده دوره
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card bg-earth-cream rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="ai">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-earth-primary/10 rounded-xl flex items-center justify-center text-earth-primary">
+                                <i class="fas fa-brain text-2xl"></i>
+                            </div>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-sand/20 text-earth-rust rounded-full">متوسط تا پیشرفته</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">هوش مصنوعی و یادگیری ماشین</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">آموزش کامل الگوریتم‌های ML و پیاده‌سازی پروژه‌های واقعی</p>
+                        
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">هوش مصنوعی</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">ML</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">TensorFlow</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-xs text-earth-dark/50 border-t border-earth-dark/5 pt-4">
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-clock"></i>
+                                <span>۸۰ ساعت</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-user"></i>
+                                <span>۸۵۰+ دانشجو</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 pt-0">
+                        <a href="https://mesbahzadeh.pythonanywhere.com/courses/ai-ml" target="_blank" class="block w-full py-3 bg-earth-dark text-earth-cream font-bold text-center rounded-xl hover:bg-earth-primary transition-colors">
+                            مشاهده دوره
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card bg-earth-cream rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="ai">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-earth-primary/10 rounded-xl flex items-center justify-center text-earth-primary">
+                                <i class="far fa-image text-2xl"></i>
+                            </div>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-sand/20 text-earth-rust rounded-full">متوسط</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">پردازش تصویر با OpenCV</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">تشخیص اشیا، چهره و بینایی کامپیوتر با پروژه‌های کاربردی</p>
+                        
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">پردازش تصویر</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">OpenCV</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-xs text-earth-dark/50 border-t border-earth-dark/5 pt-4">
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-clock"></i>
+                                <span>۴۵ ساعت</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-user"></i>
+                                <span>۶۵۰+ دانشجو</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 pt-0">
+                        <a href="https://mesbahzadeh.pythonanywhere.com/courses/computer-vision" target="_blank" class="block w-full py-3 bg-earth-dark text-earth-cream font-bold text-center rounded-xl hover:bg-earth-primary transition-colors">
+                            مشاهده دوره
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Course 4 -->
+                <div class="course-card bg-earth-cream rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="programming">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-earth-primary/10 rounded-xl flex items-center justify-center text-earth-primary">
+                                <i class="fas fa-chart-bar text-2xl"></i>
+                            </div>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-sand/20 text-earth-rust rounded-full">متوسط</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">علم داده با Python و Pandas</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">آنالیز داده، مصورسازی و کار با دیتاست‌های بزرگ</p>
+                        
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">علم داده</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">Pandas</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-xs text-earth-dark/50 border-t border-earth-dark/5 pt-4">
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-clock"></i>
+                                <span>۵۵ ساعت</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-user"></i>
+                                <span>۹۰۰+ دانشجو</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 pt-0">
+                        <a href="https://mesbahzadeh.pythonanywhere.com/courses/data-science" target="_blank" class="block w-full py-3 bg-earth-dark text-earth-cream font-bold text-center rounded-xl hover:bg-earth-primary transition-colors">
+                            مشاهده دوره
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Course 5 -->
+                <div class="course-card bg-earth-cream rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="web">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-earth-primary/10 rounded-xl flex items-center justify-center text-earth-primary">
+                                <i class="fas fa-globe text-2xl"></i>
+                            </div>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-sand/20 text-earth-rust rounded-full">مبتدی تا پیشرفته</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">دوره جامع Django</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">ساخت وب اپلیکیشن‌های حرفه‌ای با جنگو و ری‌اکت</p>
+                        
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">Django</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">وب</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-xs text-earth-dark/50 border-t border-earth-dark/5 pt-4">
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-clock"></i>
+                                <span>۷۰ ساعت</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-user"></i>
+                                <span>۱۱۰۰+ دانشجو</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 pt-0">
+                        <a href="https://mesbahzadeh.pythonanywhere.com/courses/django" target="_blank" class="block w-full py-3 bg-earth-dark text-earth-cream font-bold text-center rounded-xl hover:bg-earth-primary transition-colors">
+                            مشاهده دوره
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Course 6 -->
+                <div class="course-card bg-earth-cream rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="web">
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-earth-primary/10 rounded-xl flex items-center justify-center text-earth-primary">
+                                <i class="fas fa-database text-2xl"></i>
+                            </div>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-sand/20 text-earth-rust rounded-full">متوسط</span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">SQL و پایگاه داده پیشرفته</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">مدیریت دیتابیس، کوئری‌های پیچیده و بهینه‌سازی</p>
+                        
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">SQL</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">دیتابیس</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center text-xs text-earth-dark/50 border-t border-earth-dark/5 pt-4">
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-clock"></i>
+                                <span>۳۵ ساعت</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <i class="far fa-user"></i>
+                                <span>۸۰۰+ دانشجو</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 pt-0">
+                        <a href="https://mesbahzadeh.pythonanywhere.com/courses/sql-advanced" target="_blank" class="block w-full py-3 bg-earth-dark text-earth-cream font-bold text-center rounded-xl hover:bg-earth-primary transition-colors">
+                            مشاهده دوره
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="https://mesbahzadeh.pythonanywhere.com/courses" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-earth-primary text-white rounded-xl font-bold hover:bg-earth-dark transition-all">
+                    مشاهده همه دوره‌ها در آموزشگاه
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="bg-earth-cream section-padding">
+        <div class="container">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-earth-dark mb-4">نمونه کارهای <span class="text-earth-primary">منتخب</span></h2>
+                    <p class="text-earth-dark/60">پروژه‌هایی که با عشق و کد ساخته شده‌اند</p>
+                </div>
+                
+                <div class="flex p-1 bg-white rounded-lg gap-1">
+                    <button class="portfolio-filter px-4 py-2 bg-earth-dark text-earth-cream rounded-lg text-sm font-bold" data-filter="all">همه</button>
+                    <button class="portfolio-filter px-4 py-2 text-earth-dark/60 rounded-lg text-sm font-bold hover:bg-earth-primary/10" data-filter="ai">هوش مصنوعی</button>
+                    <button class="portfolio-filter px-4 py-2 text-earth-dark/60 rounded-lg text-sm font-bold hover:bg-earth-primary/10" data-filter="web">وب</button>
+                    <button class="portfolio-filter px-4 py-2 text-earth-dark/60 rounded-lg text-sm font-bold hover:bg-earth-primary/10" data-filter="data">علم داده</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="portfolio-item bg-white rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="ai">
+                    <div class="h-48 bg-earth-dark relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-earth-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-brain text-6xl text-earth-cream/20"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Python</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">TensorFlow</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Computer Vision</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">سیستم تشخیص تصویر CNN</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">طراحی مدل‌های یادگیری عمیق پیشرفته برای طبقه‌بندی تصاویر پزشکی با دقت ۹۸٪.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item bg-white rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="web">
+                    <div class="h-48 bg-earth-dark relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-earth-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-globe text-6xl text-earth-cream/20"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Django</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">React</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">PostgreSQL</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">پلتفرم آموزش آنلاین (LMS)</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">پیاده‌سازی کامل سیستم مدیریت یادگیری با قابلیت آزمون آنلاین و صدور مدرک خودکار.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item bg-white rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="ai">
+                    <div class="h-48 bg-earth-dark relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-earth-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-chart-line text-6xl text-earth-cream/20"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Pandas</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Sklearn</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Telegram API</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">بات تحلیلگر بورس</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">ربات هوشمند تحلیل تکنیکال و فاندامنتال بازار سرمایه با استفاده از الگوریتم‌های هوش مصنوعی.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="portfolio-item bg-white rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="ai">
+                    <div class="h-48 bg-earth-dark relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-earth-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-robot text-6xl text-earth-cream/20"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Python</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">OpenCV</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Face Recognition</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">سیستم تشخیص چهره Real-time</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">سیستم تشخیص هویت بلادرنگ با استفاده از FaceNet و OpenCV.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="portfolio-item bg-white rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="web">
+                    <div class="h-48 bg-earth-dark relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-earth-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-project-diagram text-6xl text-earth-cream/20"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Vue.js</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Node.js</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">MongoDB</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">اپلیکیشن مدیریت پروژه</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">وب اپلیکیشن کامل برای مدیریت تیم و پروژه با تخته‌های Kanban.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="portfolio-item bg-white rounded-2xl overflow-hidden border border-earth-dark/5 hover:shadow-xl transition-all duration-300" data-category="data">
+                    <div class="h-48 bg-earth-dark relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-earth-dark to-transparent opacity-80"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-6xl text-earth-cream/20"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">React</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">D3.js</span>
+                            <span class="text-xs font-bold px-2 py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">Big Data</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-earth-dark mb-3">داشبورد آنالیز داده‌های بزرگ</h3>
+                        <p class="text-earth-dark/70 text-sm mb-6">داشبورد تعاملی برای مصورسازی و تحلیل Big Data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-earth-dark text-earth-cream section-padding">
+        <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-earth-primary/20 rounded-full blur-3xl"></div>
+        
+        <div class="container relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-extrabold mb-6">شروع یک <span class="text-earth-sand">همکاری</span> جدید</h2>
+                        <p class="text-earth-cream/60 text-lg">
+                            آیا پروژه‌ای در ذهن دارید؟ یا به دنبال یادگیری مهارت‌های جدید هستید؟
+                            من همیشه آماده شنیدن ایده‌های شما هستم.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-earth-primary/20 rounded-xl flex items-center justify-center text-earth-sand">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">ایمیل</h4>
+                                <a href="mailto:mehran.mesbahzadeh@yahoo.com" class="text-earth-cream/60 hover:text-earth-sand transition-colors">
+                                    mehran.mesbahzadeh@yahoo.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-earth-primary/20 rounded-xl flex items-center justify-center text-earth-sand">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">تلفن</h4>
+                                <a href="tel:+989386750119" class="text-earth-cream/60 hover:text-earth-sand transition-colors">
+                                    ۰۹۳۸۶۷۵۰۱۱۹
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-earth-primary/20 rounded-xl flex items-center justify-center text-earth-sand">
+                                <i class="fas fa-globe text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">وب‌سایت آموزشگاه</h4>
+                                <a href="https://mesbahzadeh.pythonanywhere.com" target="_blank" class="text-earth-cream/60 hover:text-earth-sand transition-colors">
+                                    mesbahzadeh.pythonanywhere.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="font-bold mb-4 text-earth-cream/80 uppercase tracking-widest text-sm">شبکه‌های اجتماعی</h5>
+                        <div class="flex gap-4">
+                            <a href="https://linkedin.com/in/mehran-mesbahzadeh" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-earth-cream hover:bg-earth-sand hover:text-earth-dark transition-all">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/mesbahzadeh" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-earth-cream hover:bg-earth-sand hover:text-earth-dark transition-all">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://instagram.com/mehran.mesbahzadeh" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-earth-cream hover:bg-earth-sand hover:text-earth-dark transition-all">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/mehran_mesbah" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-earth-cream hover:bg-earth-sand hover:text-earth-dark transition-all">
+                                <i class="fab fa-twitter"></i>
                             </a>
                         </div>
                     </div>
-                </section>
-            );
-        };
+                </div>
 
-        const Portfolio = () => {
-            const [filter, setFilter] = useState('all');
-            const filteredProjects = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
-            const isMobile = useIsMobile();
-
-            return (
-                <section id="portfolio" className="py-16 md:py-24 bg-earth-cream relative">
-                    <div className="container mx-auto px-4 sm:px-6">
-                        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6">
+                <div class="bg-earth-cream/5 backdrop-blur-md border border-earth-cream/10 p-8 rounded-3xl shadow-2xl">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-earth-dark mb-3 md:mb-4">نمونه کارهای <span className="text-earth-primary">منتخب</span></h2>
-                                <p className="text-earth-dark/60 text-sm md:text-base">پروژه‌هایی که با عشق و کد ساخته شده‌اند</p>
+                                <label class="text-sm font-bold text-earth-cream/80 block mb-2">نام و نام خانوادگی</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-earth-cream/10 focus:border-earth-sand focus:bg-white/10 outline-none transition-all text-earth-cream">
                             </div>
-                            
-                            <div className="flex p-1 bg-white rounded-lg md:rounded-xl gap-1 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
-                                {['all', 'ai', 'web', 'data'].map(cat => (
-                                    <button
-                                        key={cat}
-                                        onClick={() => setFilter(cat)}
-                                        className={`px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-xs md:text-sm font-bold transition-all whitespace-nowrap min-h-[44px] ${
-                                            filter === cat 
-                                            ? 'bg-earth-dark text-earth-cream shadow-md' 
-                                            : 'text-earth-dark/60 hover:text-earth-dark hover:bg-earth-primary/10'
-                                        }`}
-                                        aria-label={`فیلتر ${cat}`}
-                                    >
-                                        {{'all': 'همه', 'ai': 'هوش مصنوعی', 'web': 'وب', 'data': 'علم داده'}[cat]}
-                                    </button>
-                                ))}
+                            <div>
+                                <label class="text-sm font-bold text-earth-cream/80 block mb-2">آدرس ایمیل</label>
+                                <input type="email" required dir="ltr" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-earth-cream/10 focus:border-earth-sand focus:bg-white/10 outline-none transition-all text-earth-cream">
                             </div>
                         </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                            {filteredProjects.map((project, idx) => (
-                                <div key={idx} className="group bg-white rounded-2xl md:rounded-[2rem] overflow-hidden border border-earth-dark/5 hover:border-earth-primary/30 transition-all duration-300 hover:shadow-xl md:hover:shadow-2xl flex flex-col h-full">
-                                    <div className="h-48 md:h-56 bg-earth-dark relative overflow-hidden flex items-center justify-center group">
-                                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-earth-dark to-transparent opacity-80"></div>
-                                        <project.icon size={isMobile ? 60 : 80} className="text-earth-cream/10 group-hover:scale-110 group-hover:text-earth-primary/30 transition-all duration-500" />
-                                        
-                                        <a 
-                                            href={project.link} 
-                                            className="absolute bottom-4 right-4 bg-earth-cream text-earth-dark p-2 md:p-3 rounded-lg md:rounded-xl shadow-lg translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-earth-rust hover:text-white min-h-[44px] min-w-[44px] flex items-center justify-center"
-                                            aria-label={`مشاهده ${project.title}`}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                        >
-                                            <ExternalLink size={isMobile ? 16 : 20} />
-                                        </a>
-                                    </div>
-                                    
-                                    <div className="p-5 md:p-8 flex-1 flex flex-col">
-                                        <div className="flex gap-1 md:gap-2 mb-3 md:mb-4 flex-wrap">
-                                            {project.tags.map((tag, i) => (
-                                                <span key={i} className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 md:px-2 md:py-1 bg-earth-cream text-earth-primary border border-earth-primary/20 rounded">
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-                                        <h3 className="text-lg md:text-2xl font-bold text-earth-dark mb-2 md:mb-3 group-hover:text-earth-rust transition-colors">
-                                            {project.title}
-                                        </h3>
-                                        <p className="text-earth-dark/70 text-xs md:text-sm leading-relaxed mb-4 md:mb-6 flex-1">
-                                            {project.description}
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
+                        <div>
+                            <label class="text-sm font-bold text-earth-cream/80 block mb-2">موضوع پیام</label>
+                            <input type="text" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-earth-cream/10 focus:border-earth-sand focus:bg-white/10 outline-none transition-all text-earth-cream">
                         </div>
-                    </div>
-                </section>
-            );
-        };
-
-        const Contact = () => {
-            const [formData, setFormData] = useState({
-                name: '',
-                email: '',
-                subject: '',
-                message: ''
-            });
-
-            const handleSubmit = (e) => {
-                e.preventDefault();
-                alert('پیام شما با موفقیت ارسال شد. به زودی با شما تماس خواهم گرفت.');
-                setFormData({ name: '', email: '', subject: '', message: '' });
-            };
-
-            const handleChange = (e) => {
-                setFormData({
-                    ...formData,
-                    [e.target.name]: e.target.value
-                });
-            };
-
-            return (
-                <section id="contact" className="py-16 md:py-24 bg-earth-dark text-earth-cream relative overflow-hidden">
-                    <div className="absolute -left-20 -bottom-20 w-64 h-64 md:w-96 md:h-96 bg-earth-primary/20 rounded-full blur-2xl md:blur-3xl"></div>
-                    
-                    <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                        <div className="grid lg:grid-cols-2 gap-10 md:gap-16">
-                            <div className="space-y-8 md:space-y-10">
-                                <div>
-                                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 md:mb-6">شروع یک <span className="text-earth-sand">همکاری</span> جدید</h2>
-                                    <p className="text-earth-cream/60 text-base md:text-lg leading-relaxed">
-                                        آیا پروژه‌ای در ذهن دارید؟ یا به دنبال یادگیری مهارت‌های جدید هستید؟
-                                        <br className="hidden md:block"/>
-                                        من همیشه آماده شنیدن ایده‌های شما هستم.
-                                    </p>
-                                </div>
-
-                                <div className="space-y-5 md:space-y-6">
-                                    <ContactItem 
-                                        icon={Mail} 
-                                        title="ایمیل" 
-                                        value="mehran.mesbahzadeh@yahoo.com" 
-                                        href="mailto:mehran.mesbahzadeh@yahoo.com" 
-                                    />
-                                    <ContactItem 
-                                        icon={Phone} 
-                                        title="تلفن" 
-                                        value="09386750119" 
-                                        href="tel:+989386750119" 
-                                    />
-                                    <ContactItem 
-                                        icon={Globe} 
-                                        title="وب‌سایت آموزشگاه" 
-                                        value="mesbahzadeh.pythonanywhere.com" 
-                                        href="https://mesbahzadeh.pythonanywhere.com" 
-                                    />
-                                </div>
-
-                                <div>
-                                    <h5 className="font-bold mb-3 md:mb-4 text-earth-cream/80 text-xs md:text-sm uppercase tracking-widest">شبکه‌های اجتماعی</h5>
-                                    <div className="flex gap-3 md:gap-4">
-                                         <SocialLink href="https://linkedin.com/in/mehran-mesbahzadeh" icon={Linkedin} label="LinkedIn" />
-                                         <SocialLink href="https://github.com/mesbahzadeh" icon={Github} label="GitHub" />
-                                         <SocialLink href="https://instagram.com/mehran.mesbahzadeh" icon={Instagram} label="Instagram" />
-                                         <SocialLink href="https://twitter.com/mehran_mesbah" icon={Twitter} label="Twitter" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="bg-earth-cream/5 backdrop-blur-md border border-earth-cream/10 p-6 md:p-10 rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl">
-                                <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
-                                    <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-                                        <InputGroup 
-                                            label="نام و نام خانوادگی" 
-                                            type="text" 
-                                            name="name"
-                                            value={formData.name}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                        <InputGroup 
-                                            label="آدرس ایمیل" 
-                                            type="email" 
-                                            dir="ltr"
-                                            name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                        />
-                                    </div>
-                                    <InputGroup 
-                                        label="موضوع پیام" 
-                                        type="text" 
-                                        name="subject"
-                                        value={formData.subject}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                    <div className="space-y-2">
-                                        <label className="text-xs md:text-sm font-bold text-earth-cream/80 block">متن پیام</label>
-                                        <textarea 
-                                            name="message"
-                                            rows="4" 
-                                            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-earth-cream/10 focus:border-earth-sand focus:bg-white/10 outline-none transition-all text-earth-cream resize-none text-sm md:text-base"
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            required
-                                        ></textarea>
-                                    </div>
-                                    <button 
-                                        type="submit" 
-                                        className="w-full py-3 md:py-4 bg-earth-sand text-earth-dark font-extrabold rounded-xl hover:bg-earth-primary hover:text-white transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 min-h-[50px]"
-                                        aria-label="ارسال پیام"
-                                    >
-                                        ارسال پیام <Send size={18} />
-                                    </button>
-                                </form>
-                            </div>
+                        <div>
+                            <label class="text-sm font-bold text-earth-cream/80 block mb-2">متن پیام</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 rounded-xl bg-white/5 border border-earth-cream/10 focus:border-earth-sand focus:bg-white/10 outline-none transition-all text-earth-cream resize-none"></textarea>
                         </div>
-                    </div>
-                </section>
-            );
-        };
-
-        const Footer = () => (
-            <footer className="bg-earth-dark py-6 md:py-8 border-t border-earth-cream/5 text-center text-earth-cream/40 text-xs md:text-sm">
-                <div className="container mx-auto px-4 sm:px-6">
-                    <p>© ۲۰۲۶ تمامی حقوق برای مهران مصباح‌زاده محفوظ است. | طراحی شده با ❤️ و React</p>
-                </div>
-            </footer>
-        );
-
-        const App = () => {
-            useEffect(() => {
-                // SEO structured data
-                const structuredData = {
-                    "@context": "https://schema.org",
-                    "@type": "Person",
-                    "name": "مهران مصباح‌زاده",
-                    "jobTitle": "مهندس هوش مصنوعی و مدرس",
-                    "url": window.location.href,
-                    "sameAs": [
-                        "https://github.com/mesbahzadeh",
-                        "https://linkedin.com/in/mehran-mesbahzadeh",
-                        "https://mesbahzadeh.pythonanywhere.com"
-                    ],
-                    "knowsAbout": ["هوش مصنوعی", "یادگیری ماشین", "پایتون", "علم داده", "توسعه وب"],
-                    "description": "متخصص هوش مصنوعی، یادگیری ماشین، پایتون و علم داده با بیش از ۸ سال تجربه"
-                };
-                
-                const script = document.createElement('script');
-                script.type = 'application/ld+json';
-                script.text = JSON.stringify(structuredData);
-                document.head.appendChild(script);
-                
-                return () => {
-                    const existingScript = document.querySelector('script[type="application/ld+json"]');
-                    if (existingScript) {
-                        existingScript.remove();
-                    }
-                };
-            }, []);
-
-            return (
-                <div className="font-sans antialiased">
-                    <Navbar />
-                    <main>
-                        <Hero />
-                        <About />
-                        <Skills />
-                        <Courses />
-                        <Portfolio />
-                        <Contact />
-                    </main>
-                    <Footer />
-                </div>
-            );
-        };
-
-        // Mount the app
-        const mountApp = () => {
-            try {
-                const rootElement = document.getElementById('root');
-                if (rootElement) {
-                    const root = ReactDOM.createRoot(rootElement);
-                    root.render(<App />);
-                }
-            } catch (error) {
-                console.error('Error mounting app:', error);
-                document.getElementById('root').innerHTML = `
-                    <div style="padding: 2rem; text-align: center; background: #FEFAE0; color: #283618; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                        <h1 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: #BC6C25;">خطا در بارگذاری</h1>
-                        <p style="margin-bottom: 1rem;">مشکلی در بارگذاری صفحه پیش آمده است.</p>
-                        <button onclick="window.location.reload()" style="padding: 0.5rem 1rem; background: #606C38; color: white; border: none; border-radius: 0.5rem; cursor: pointer;">
-                            رفرش صفحه
+                        <button type="submit" class="w-full py-4 bg-earth-sand text-earth-dark font-extrabold rounded-xl hover:bg-earth-primary hover:text-white transition-all flex items-center justify-center gap-2">
+                            ارسال پیام
+                            <i class="fas fa-paper-plane"></i>
                         </button>
-                    </div>
-                `;
-            }
-        };
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Wait for page to load
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', mountApp);
-        } else {
-            mountApp();
-        }
+    <!-- Footer -->
+    <footer class="bg-earth-dark py-8 border-t border-earth-cream/5 text-center text-earth-cream/40 text-sm">
+        <div class="container">
+            <p>© ۲۰۲۶ تمامی حقوق برای مهران مصباح‌زاده محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = '';
+        });
+        
+        // Close mobile menu when clicking on links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Course Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const courseCards = document.querySelectorAll('.course-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-earth-dark', 'text-earth-cream');
+                    btn.classList.add('bg-earth-cream', 'text-earth-dark/60');
+                });
+                button.classList.add('bg-earth-dark', 'text-earth-cream');
+                button.classList.remove('bg-earth-cream', 'text-earth-dark/60');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                // Filter courses
+                courseCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Portfolio Filtering
+        const portfolioFilters = document.querySelectorAll('.portfolio-filter');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        portfolioFilters.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button
+                portfolioFilters.forEach(btn => {
+                    btn.classList.remove('bg-earth-dark', 'text-earth-cream');
+                    btn.classList.add('text-earth-dark/60');
+                });
+                button.classList.add('bg-earth-dark', 'text-earth-cream');
+                button.classList.remove('text-earth-dark/60');
+                
+                const filter = button.getAttribute('data-filter');
+                
+                // Filter portfolio items
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.9)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('پیام شما با موفقیت ارسال شد. به زودی با شما تماس خواهم گرفت.');
+            contactForm.reset();
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.add('py-3');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.remove('py-3');
+                nav.classList.add('py-4');
+            }
+        });
     </script>
 </body>
 </html>
