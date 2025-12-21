@@ -208,7 +208,9 @@
             Menu, X, ArrowLeft, Github, Linkedin, Mail, 
             Code, Brain, Layers, LineChart, Globe, Database, 
             Server, Cpu, BookOpen, ExternalLink, Tag, 
-            Phone, Send, Youtube, Instagram, Twitter 
+            Phone, Send, Youtube, Instagram, Twitter,
+            Camera, BarChart, Video, Smartphone, Palette,
+            Cloud, Zap, Shield, DatabaseZap, Gamepad2
         } from 'lucide-react';
 
         // --- Data Definitions ---
@@ -216,6 +218,7 @@
             { label: 'خانه', href: '#home' },
             { label: 'درباره من', href: '#about' },
             { label: 'مهارت‌ها', href: '#skills' },
+            { label: 'دوره‌های آموزشی', href: '#courses' },
             { label: 'نمونه کارها', href: '#portfolio' },
             { label: 'تماس', href: '#contact' },
         ];
@@ -229,6 +232,93 @@
             { name: 'PostgreSQL', icon: Database, category: 'Web', level: 85 },
             { name: 'FastAPI', icon: Server, category: 'Web', level: 80 },
             { name: 'Docker', icon: Cpu, category: 'Web', level: 75 },
+            { name: 'React & Next.js', icon: Smartphone, category: 'Web', level: 82 },
+            { name: 'Computer Vision', icon: Camera, category: 'AI', level: 88 },
+            { name: 'Data Analysis', icon: BarChart, category: 'AI', level: 90 },
+            { name: 'Cloud (AWS/GCP)', icon: Cloud, category: 'Web', level: 70 },
+        ];
+
+        const COURSES = [
+            {
+                title: 'پایتون جامع از صفر تا پیشرفته',
+                description: 'یادگیری کامل پایتون با پروژه‌های عملی و آمادگی برای بازار کار',
+                duration: '۴۰ ساعت',
+                level: 'مبتدی تا پیشرفته',
+                price: '۲۹۹,۰۰۰ تومان',
+                icon: Code,
+                category: 'programming',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/python-complete'
+            },
+            {
+                title: 'هوش مصنوعی و یادگیری ماشین با Python',
+                description: 'اصول هوش مصنوعی، مدل‌های پیشرفته و پیاده‌سازی پروژه‌های واقعی',
+                duration: '۶۰ ساعت',
+                level: 'متوسط',
+                price: '۴۹۹,۰۰۰ تومان',
+                icon: Brain,
+                category: 'ai',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/ai-ml'
+            },
+            {
+                title: 'پردازش تصویر و بینایی کامپیوتر',
+                description: 'تشخیص چهره، اشیا و پردازش ویدیو با OpenCV و Deep Learning',
+                duration: '۳۵ ساعت',
+                level: 'متوسط تا پیشرفته',
+                price: '۳۹۹,۰۰۰ تومان',
+                icon: Camera,
+                category: 'ai',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/computer-vision'
+            },
+            {
+                title: 'علم داده و تحلیل‌های پیشرفته',
+                description: 'تحلیل داده، مصورسازی و یادگیری ماشین برای تصمیم‌گیری',
+                duration: '۴۵ ساعت',
+                level: 'متوسط',
+                price: '۴۵۰,۰۰۰ تومان',
+                icon: LineChart,
+                category: 'data',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/data-science'
+            },
+            {
+                title: 'توسعه وب Full-Stack با Django',
+                description: 'ساخت اپلیکیشن‌های وب کامل از Backend تا Frontend',
+                duration: '۵۰ ساعت',
+                level: 'مبتدی تا متوسط',
+                price: '۳۵۰,۰۰۰ تومان',
+                icon: Globe,
+                category: 'web',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/django'
+            },
+            {
+                title: 'طراحی رابط کاربری (UI/UX)',
+                description: 'اصول طراحی مدرن، ابزارها و پیاده‌سازی با Figma',
+                duration: '۳۰ ساعت',
+                level: 'مبتدی',
+                price: '۲۵۰,۰۰۰ تومان',
+                icon: Palette,
+                category: 'design',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/ui-ux'
+            },
+            {
+                title: 'پردازش زبان طبیعی (NLP)',
+                description: 'مدل‌های زبانی، ChatGPT و تحلیل متون فارسی',
+                duration: '۴۰ ساعت',
+                level: 'پیشرفته',
+                price: '۴۷۹,۰۰۰ تومان',
+                icon: DatabaseZap,
+                category: 'ai',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/nlp'
+            },
+            {
+                title: 'برنامه‌نویسی موبایل با React Native',
+                description: 'ساخت اپلیکیشن‌های iOS و Android با JavaScript',
+                duration: '۴۲ ساعت',
+                level: 'متوسط',
+                price: '۳۸۰,۰۰۰ تومان',
+                icon: Smartphone,
+                category: 'mobile',
+                link: 'https://mesbahzadeh.pythonanywhere.com/courses/react-native'
+            },
         ];
 
         const PROJECTS = [
@@ -263,14 +353,78 @@
                 icon: BookOpen,
                 category: 'teaching',
                 link: '#'
+            },
+            {
+                title: 'سیستم تشخیص چهره Real-time',
+                description: 'پیاده‌سازی سیستم شناسایی چهره با قابلیت کار در زمان واقعی و دقت بالا.',
+                tags: ['OpenCV', 'Face Recognition', 'Real-time'],
+                icon: Camera,
+                category: 'ai',
+                link: '#'
+            },
+            {
+                title: 'پلتفرم تحلیل احساسات متون فارسی',
+                description: 'تحلیل خودکار احساسات در نظرات کاربران با مدل‌های NLP پیشرفته.',
+                tags: ['NLP', 'Sentiment Analysis', 'Python'],
+                icon: DatabaseZap,
+                category: 'ai',
+                link: '#'
+            },
+            {
+                title: 'اپلیکیشن مدیریت پروژه',
+                description: 'نرم‌افزار تحت وب برای مدیریت تیم‌های برنامه‌نویسی و پیگیری پیشرفت پروژه.',
+                tags: ['React', 'Node.js', 'MongoDB'],
+                icon: Smartphone,
+                category: 'web',
+                link: '#'
+            },
+            {
+                title: 'سیستم پیشنهاددهنده فیلم',
+                description: 'الگوریتم پیشنهاد فیلم بر اساس علایق کاربر با استفاده از Collaborative Filtering.',
+                tags: ['Recommendation', 'Machine Learning'],
+                icon: Gamepad2,
+                category: 'ai',
+                link: '#'
+            },
+            {
+                title: 'داشبورد تحلیل داده‌های کسب‌وکار',
+                description: 'پنل مدیریتی با نمودارهای تعاملی برای تحلیل عملکرد سازمانی.',
+                tags: ['Dashboard', 'Data Visualization', 'Business'],
+                icon: BarChart,
+                category: 'data',
+                link: '#'
+            },
+            {
+                title: 'سیستم امنیتی با تشخیص حرکت',
+                description: 'سیستم نظارتی هوشمند با قابلیت شناسایی حرکت و ارسال هشدار.',
+                tags: ['Security', 'Motion Detection', 'AI'],
+                icon: Shield,
+                category: 'ai',
+                link: '#'
+            },
+            {
+                title: 'اپلیکیشن آب و هوای هوشمند',
+                description: 'برنامه موبایل با پیش‌بینی دقیق آب و هوا و آلودگی هوا.',
+                tags: ['Mobile App', 'Weather API', 'React Native'],
+                icon: Cloud,
+                category: 'mobile',
+                link: '#'
+            },
+            {
+                title: 'پلتفرم آموزش آنلاین کودکان',
+                description: 'سامانه آموزشی جذاب با محتوای تعاملی برای کودکان ۶-۱۲ سال.',
+                tags: ['E-learning', 'Children', 'Interactive'],
+                icon: BookOpen,
+                category: 'teaching',
+                link: '#'
             }
         ];
 
         const STATS = [
             { value: '+۸', label: 'سال تجربه' },
             { value: '+۱۰۰۰', label: 'دانشجو' },
-            { value: '+۳۰', label: 'پروژه موفق' },
-            { value: '+۱۰', label: 'دوره آموزشی' },
+            { value: '+۵۰', label: 'پروژه موفق' },
+            { value: '+۱۵', label: 'دوره آموزشی' },
         ];
 
         // --- Mobile Detection Hook ---
@@ -544,7 +698,7 @@
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
                             {SKILLS.map((skill, idx) => (
                                 <div key={idx} className="group p-4 md:p-8 bg-white rounded-2xl md:rounded-[2rem] shadow-sm hover:shadow-xl md:hover:shadow-2xl hover:shadow-earth-primary/10 transition-all duration-500 border border-earth-dark/5 hover:-translate-y-1 md:hover:-translate-y-2 relative overflow-hidden">
                                     <div className="absolute top-0 right-0 w-16 h-16 md:w-24 md:h-24 bg-earth-primary/5 rounded-bl-2xl md:rounded-bl-[4rem] transition-colors group-hover:bg-earth-primary/10"></div>
@@ -555,7 +709,9 @@
                                     
                                     <h3 className="text-lg md:text-xl font-bold text-earth-dark mb-1 md:mb-2">{skill.name}</h3>
                                     <p className="text-xs md:text-sm text-earth-dark/50 font-medium mb-3 md:mb-4">
-                                        {skill.category === 'AI' ? 'هوش مصنوعی' : 'توسعه وب'}
+                                        {skill.category === 'AI' ? 'هوش مصنوعی' : 
+                                         skill.category === 'Web' ? 'توسعه وب' : 
+                                         skill.category === 'Data' ? 'علم داده' : 'سایر'}
                                     </p>
                                     
                                     <div className="w-full bg-earth-dark/5 h-1.5 rounded-full overflow-hidden">
@@ -572,145 +728,169 @@
             );
         };
 
+        const Courses = () => {
+            const isMobile = useIsMobile();
+
+            return (
+                <section id="courses" className="py-16 md:py-24 bg-earth-dark text-earth-cream relative">
+                    <div className="container mx-auto px-4 sm:px-6">
+                        <div className="text-center mb-10 md:mb-16 space-y-3 md:space-y-4">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold">دوره‌های <span className="text-earth-sand">آموزشی</span></h2>
+                            <p className="text-earth-cream/60 max-w-xl mx-auto text-sm md:text-base">
+                                آموزش‌های تخصصی برای ورود به بازار کار فناوری
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                            {COURSES.map((course, idx) => (
+                                <div key={idx} className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl md:rounded-3xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:border-earth-sand/30 hover:shadow-xl md:hover:shadow-2xl flex flex-col h-full">
+                                    <div className="p-6 md:p-8 flex-1">
+                                        <div className="flex items-center justify-between mb-4 md:mb-6">
+                                            <div className="w-12 h-12 md:w-14 md:h-14 bg-earth-primary/20 rounded-xl md:rounded-2xl flex items-center justify-center text-earth-sand group-hover:bg-earth-sand group-hover:text-earth-dark transition-colors">
+                                                <course.icon size={isMobile ? 24 : 28} />
+                                            </div>
+                                            <div className="text-left">
+                                                <div className="text-xs md:text-sm text-earth-cream/60 mb-1">مدت زمان</div>
+                                                <div className="text-sm md:text-base font-bold text-earth-sand">{course.duration}</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <h3 className="text-lg md:text-xl font-bold text-earth-cream mb-2 md:mb-3 group-hover:text-earth-sand transition-colors">
+                                            {course.title}
+                                        </h3>
+                                        
+                                        <p className="text-earth-cream/70 text-xs md:text-sm leading-relaxed mb-4 md:mb-6">
+                                            {course.description}
+                                        </p>
+                                        
+                                        <div className="flex items-center justify-between mb-4 md:mb-6">
+                                            <div className="text-xs md:text-sm bg-earth-primary/20 text-earth-sand px-2 py-1 md:px-3 md:py-1.5 rounded-lg font-bold">
+                                                {course.level}
+                                            </div>
+                                            <div className="text-lg md:text-xl font-black text-earth-sand">
+                                                {course.price}
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="text-left">
+                                            <span className="text-xs md:text-sm text-earth-cream/40 font-bold">
+                                                دسته‌بندی: 
+                                                <span className="text-earth-sand mr-1">
+                                                    {course.category === 'ai' ? ' هوش مصنوعی' :
+                                                     course.category === 'programming' ? ' برنامه‌نویسی' :
+                                                     course.category === 'data' ? ' علم داده' :
+                                                     course.category === 'web' ? ' توسعه وب' :
+                                                     course.category === 'design' ? ' طراحی' :
+                                                     course.category === 'mobile' ? ' موبایل' : ' آموزشی'}
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="p-6 md:p-8 pt-0">
+                                        <a 
+                                            href={course.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block w-full py-3 md:py-4 bg-earth-sand text-earth-dark font-extrabold rounded-xl hover:bg-earth-primary hover:text-white transition-all text-center flex items-center justify-center gap-2 shadow-lg active:scale-95 min-h-[50px]"
+                                            aria-label={`ثبت نام در دوره ${course.title}`}
+                                        >
+                                            مشاهده و ثبت نام
+                                            <ExternalLink size={isMobile ? 16 : 18} />
+                                        </a>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                        
+                        <div className="text-center mt-10 md:mt-16">
+                            <a 
+                                href="https://mesbahzadeh.pythonanywhere.com/courses"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 bg-earth-primary text-earth-cream font-bold rounded-xl hover:bg-earth-sand hover:text-earth-dark transition-all shadow-lg active:scale-95 min-h-[50px]"
+                                aria-label="مشاهده تمام دوره‌ها"
+                            >
+                                مشاهده تمام دوره‌های آموزشگاه
+                                <ExternalLink size={isMobile ? 18 : 20} />
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+
         const Portfolio = () => {
             const [filter, setFilter] = useState('all');
             const filteredProjects = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.category === filter);
             const isMobile = useIsMobile();
 
             return (
-         <section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="section-title">
-                نمونه کارهای <span class="text-gradient">منتخب</span>
-            </h2>
-            <p class="section-subtitle">
-                پروژه‌هایی که با عشق و کد ساخته شده‌اند
-            </p>
-            
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">همه</button>
-                <button class="filter-btn" data-filter="ai">هوش مصنوعی</button>
-                <button class="filter-btn" data-filter="web">وب</button>
-                <button class="filter-btn" data-filter="data">علم داده</button>
-            </div>
-            
-            <div class="portfolio-grid">
-                <!-- Project 1 -->
-                <div class="portfolio-card card" data-category="ai">
-                    <div class="portfolio-image">
-                        <i class="fas fa-brain portfolio-image-icon"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="course-tags">
-                            <span class="course-tag">Python</span>
-                            <span class="course-tag">TensorFlow</span>
-                            <span class="course-tag">Computer Vision</span>
-                            <span class="course-tag">CNN</span>
+                <section id="portfolio" className="py-16 md:py-24 bg-white relative">
+                    <div className="container mx-auto px-4 sm:px-6">
+                        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16 gap-6">
+                            <div>
+                                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-earth-dark mb-3 md:mb-4">نمونه کارهای <span className="text-earth-primary">منتخب</span></h2>
+                                <p className="text-earth-dark/60 text-sm md:text-base">پروژه‌هایی که با عشق و کد ساخته شده‌اند</p>
+                            </div>
+                            
+                            <div className="flex p-1 bg-earth-cream rounded-lg md:rounded-xl gap-1 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0">
+                                {['all', 'ai', 'web', 'teaching', 'data', 'mobile'].map(cat => (
+                                    <button
+                                        key={cat}
+                                        onClick={() => setFilter(cat)}
+                                        className={`px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-xs md:text-sm font-bold transition-all whitespace-nowrap min-h-[44px] ${
+                                            filter === cat 
+                                            ? 'bg-earth-dark text-earth-cream shadow-md' 
+                                            : 'text-earth-dark/60 hover:text-earth-dark hover:bg-earth-primary/10'
+                                        }`}
+                                        aria-label={`فیلتر ${cat}`}
+                                    >
+                                        {{'all': 'همه', 'ai': 'هوش مصنوعی', 'web': 'وب', 'teaching': 'آموزش', 'data': 'داده', 'mobile': 'موبایل'}[cat]}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
-                        <h3 class="course-title">سیستم تشخیص تصویر CNN</h3>
-                        <p class="course-description">
-                            طراحی مدل‌های یادگیری عمیق پیشرفته برای طبقه‌بندی تصاویر پزشکی با دقت ۹۸٪.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="portfolio-card card" data-category="web">
-                    <div class="portfolio-image">
-                        <i class="fas fa-globe portfolio-image-icon"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="course-tags">
-                            <span class="course-tag">Django</span>
-                            <span class="course-tag">React</span>
-                            <span class="course-tag">PostgreSQL</span>
-                            <span class="course-tag">REST API</span>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                            {filteredProjects.map((project, idx) => (
+                                <div key={idx} className="group bg-earth-cream rounded-2xl md:rounded-[2rem] overflow-hidden border border-earth-dark/5 hover:border-earth-primary/30 transition-all duration-300 hover:shadow-xl md:hover:shadow-2xl flex flex-col h-full">
+                                    <div className="h-48 md:h-56 bg-earth-dark relative overflow-hidden flex items-center justify-center group">
+                                        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-earth-dark to-transparent opacity-80"></div>
+                                        <project.icon size={isMobile ? 60 : 80} className="text-earth-cream/10 group-hover:scale-110 group-hover:text-earth-primary/30 transition-all duration-500" />
+                                        
+                                        <a 
+                                            href={project.link} 
+                                            className="absolute bottom-4 right-4 bg-earth-cream text-earth-dark p-2 md:p-3 rounded-lg md:rounded-xl shadow-lg translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-earth-rust hover:text-white min-h-[44px] min-w-[44px] flex items-center justify-center"
+                                            aria-label={`مشاهده ${project.title}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <ExternalLink size={isMobile ? 16 : 20} />
+                                        </a>
+                                    </div>
+                                    
+                                    <div className="p-5 md:p-8 flex-1 flex flex-col">
+                                        <div className="flex gap-1 md:gap-2 mb-3 md:mb-4 flex-wrap">
+                                            {project.tags.map((tag, i) => (
+                                                <span key={i} className="text-[8px] md:text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 md:px-2 md:py-1 bg-white text-earth-primary border border-earth-primary/20 rounded">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <h3 className="text-lg md:text-2xl font-bold text-earth-dark mb-2 md:mb-3 group-hover:text-earth-rust transition-colors">
+                                            {project.title}
+                                        </h3>
+                                        <p className="text-earth-dark/70 text-xs md:text-sm leading-relaxed mb-4 md:mb-6 flex-1">
+                                            {project.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                        <h3 class="course-title">پلتفرم آموزش آنلاین (LMS)</h3>
-                        <p class="course-description">
-                            پیاده‌سازی کامل سیستم مدیریت یادگیری با قابلیت آزمون آنلاین و صدور مدرک خودکار.
-                        </p>
                     </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="portfolio-card card" data-category="ai">
-                    <div class="portfolio-image">
-                        <i class="fas fa-chart-line portfolio-image-icon"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="course-tags">
-                            <span class="course-tag">Pandas</span>
-                            <span class="course-tag">Sklearn</span>
-                            <span class="course-tag">Telegram API</span>
-                            <span class="course-tag">Time Series</span>
-                        </div>
-                        <h3 class="course-title">بات تحلیلگر بورس</h3>
-                        <p class="course-description">
-                            ربات هوشمند تحلیل تکنیکال و فاندامنتال بازار سرمایه با استفاده از الگوریتم‌های هوش مصنوعی.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="portfolio-card card" data-category="ai">
-                    <div class="portfolio-image">
-                        <i class="fas fa-robot portfolio-image-icon"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="course-tags">
-                            <span class="course-tag">Python</span>
-                            <span class="course-tag">OpenCV</span>
-                            <span class="course-tag">Face Recognition</span>
-                            <span class="course-tag">Real-time</span>
-                        </div>
-                        <h3 class="course-title">سیستم تشخیص چهره Real-time</h3>
-                        <p class="course-description">
-                            سیستم تشخیص هویت بلادرنگ با استفاده از FaceNet و OpenCV.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="portfolio-card card" data-category="web">
-                    <div class="portfolio-image">
-                        <i class="fas fa-project-diagram portfolio-image-icon"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="course-tags">
-                            <span class="course-tag">Vue.js</span>
-                            <span class="course-tag">Node.js</span>
-                            <span class="course-tag">MongoDB</span>
-                            <span class="course-tag">WebSocket</span>
-                        </div>
-                        <h3 class="course-title">اپلیکیشن مدیریت پروژه</h3>
-                        <p class="course-description">
-                            وب اپلیکیشن کامل برای مدیریت تیم و پروژه با تخته‌های Kanban.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="portfolio-card card" data-category="data">
-                    <div class="portfolio-image">
-                        <i class="fas fa-chart-bar portfolio-image-icon"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="course-tags">
-                            <span class="course-tag">React</span>
-                            <span class="course-tag">D3.js</span>
-                            <span class="course-tag">Big Data</span>
-                            <span class="course-tag">Data Visualization</span>
-                        </div>
-                        <h3 class="course-title">داشبورد آنالیز داده‌های بزرگ</h3>
-                        <p class="course-description">
-                            داشبورد تعاملی برای مصورسازی و تحلیل Big Data.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </section>
             );
         };
 
@@ -962,6 +1142,7 @@
                         <Hero />
                         <About />
                         <Skills />
+                        <Courses />
                         <Portfolio />
                         <Contact />
                     </main>
