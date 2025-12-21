@@ -77,16 +77,8 @@
         }
     </script>
 
-    <!-- React & Babel Setup for Browser - UPDATED FOR MOBILE COMPATIBILITY -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-    <!-- Lucide React Icons -->
-    <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
-
     <style>
-        /* Custom Scrollbar - Mobile Friendly */
+        /* Custom Scrollbar */
         @media (min-width: 768px) {
             ::-webkit-scrollbar { width: 8px; }
             ::-webkit-scrollbar-track { background: #FEFAE0; }
@@ -108,6 +100,7 @@
             min-height: 100vh;
             width: 100%;
             position: relative;
+            font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
         }
         
         /* Fix for Mobile Overflow */
@@ -130,20 +123,12 @@
             min-width: 44px;
         }
         
-        /* Glassmorphism with Mobile Support */
+        /* Glassmorphism */
         .glass {
             background: rgba(254, 250, 224, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(40, 54, 24, 0.05);
-        }
-        
-        @media (max-width: 768px) {
-            .glass {
-                background: rgba(254, 250, 224, 0.95);
-                backdrop-filter: blur(8px);
-                -webkit-backdrop-filter: blur(8px);
-            }
         }
         
         .glass-dark {
@@ -152,27 +137,9 @@
             -webkit-backdrop-filter: blur(12px);
         }
         
-        /* Smooth Scrolling with Mobile Support */
-        @media (prefers-reduced-motion: no-preference) {
-            html {
-                scroll-behavior: smooth;
-            }
-        }
-        
-        /* Mobile-Specific Adjustments */
-        @media (max-width: 640px) {
-            .mobile-text-center {
-                text-align: center;
-            }
-            .mobile-px-4 {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-        }
-        
-        /* Prevent text size adjustment on orientation change */
+        /* Smooth Scrolling */
         html {
-            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
         }
         
         /* Loading Animation */
@@ -188,6 +155,49 @@
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+        
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px;
+                padding-right: 1.5rem;
+                padding-left: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px;
+                padding-right: 2rem;
+                padding-left: 2rem;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px;
+            }
+        }
+        
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px;
+            }
         }
     </style>
 </head>
@@ -207,23 +217,27 @@
         </div>
     </div>
 
-    <!-- MAIN REACT APPLICATION -->
+    <!-- React and Babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
+
     <script type="text/babel">
-        // --- Global Variables ---
-        const { 
-            useState, 
-            useEffect, 
-            useLayoutEffect 
-        } = React;
+        // استفاده از React و ReactDOM از CDN
+        const { useState, useEffect } = React;
+        const ReactDOM = window.ReactDOM;
         
-        const { 
+        // استفاده از آیکون‌ها از Lucide
+        const {
             Menu, X, ArrowLeft, Github, Linkedin, Mail, 
             Code, Brain, Layers, LineChart, Globe, Database, 
-            Server, Cpu, BookOpen, ExternalLink, Tag, 
-            Phone, Send, Youtube, Instagram, Twitter,
+            Server, Cpu, BookOpen, ExternalLink,
+            Phone, Send, Instagram, Twitter, Youtube,
             Video, Award, Users, Clock, ChevronLeft,
-            Image, BarChart3, Cpu as CpuIcon, Smartphone,
-            Database as DatabaseIcon, Cloud, Terminal
+            Image, BarChart3, Smartphone, Cloud, Terminal
         } = lucideReact;
 
         // --- Data Definitions ---
@@ -247,7 +261,6 @@
             { name: 'Docker', icon: Cpu, category: 'Web', level: 75 },
         ];
 
-        // --- دوره‌های آموزشی ---
         const COURSES = [
             {
                 title: 'پایتون جامع از صفر تا صد',
@@ -323,7 +336,7 @@
                 level: 'متوسط',
                 category: 'data',
                 link: 'https://mesbahzadeh.pythonanywhere.com/courses/sql-advanced',
-                icon: DatabaseIcon,
+                icon: Database,
                 tags: ['SQL', 'دیتابیس', 'PostgreSQL']
             },
             {
@@ -339,7 +352,6 @@
             }
         ];
 
-        // --- پروژه‌های بیشتر ---
         const PROJECTS = [
             {
                 title: 'سیستم تشخیص تصویر CNN',
@@ -369,7 +381,7 @@
                 title: 'سیستم تشخیص چهره Real-time',
                 description: 'سیستم تشخیص هویت بلادرنگ با استفاده از FaceNet و OpenCV.',
                 tags: ['Python', 'OpenCV', 'Face Recognition', 'Real-time'],
-                icon: CpuIcon,
+                icon: Cpu,
                 category: 'ai',
                 link: '#'
             },
@@ -446,7 +458,8 @@
             { value: '+۱۵', label: 'دوره آموزشی' },
         ];
 
-        // --- Mobile Detection Hook ---
+        // --- Components ---
+
         const useIsMobile = () => {
             const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
@@ -462,7 +475,51 @@
             return isMobile;
         };
 
-        // --- Components ---
+        const SocialLink = ({ href, icon: Icon, label }) => (
+            <a 
+                href={href} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-earth-cream hover:bg-earth-sand hover:text-earth-dark hover:scale-110 transition-all duration-300 active:scale-95"
+                aria-label={label}
+            >
+                <Icon size={18} />
+            </a>
+        );
+
+        const ContactItem = ({ icon: Icon, title, value, href }) => (
+            <div className="flex items-center gap-3 md:gap-4 group">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-earth-primary/20 rounded-lg md:rounded-xl flex items-center justify-center text-earth-sand group-hover:bg-earth-sand group-hover:text-earth-dark transition-colors">
+                    <Icon size={20} />
+                </div>
+                <div>
+                    <h4 className="font-bold text-earth-cream text-base md:text-lg">{title}</h4>
+                    <a 
+                        href={href} 
+                        className="text-earth-cream/60 group-hover:text-earth-sand transition-colors font-sans dir-ltr block text-left text-sm md:text-base break-all"
+                        aria-label={`${title}: ${value}`}
+                    >
+                        {value}
+                    </a>
+                </div>
+            </div>
+        );
+
+        const InputGroup = ({ label, type, dir, name, value, onChange, required }) => (
+            <div className="space-y-2">
+                <label className="text-xs md:text-sm font-bold text-earth-cream/80 block">{label}</label>
+                <input 
+                    type={type} 
+                    dir={dir}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-earth-cream/10 focus:border-earth-sand focus:bg-white/10 outline-none transition-all text-earth-cream text-sm md:text-base"
+                    required={required}
+                    aria-label={label}
+                />
+            </div>
+        );
 
         const Navbar = () => {
             const [isOpen, setIsOpen] = useState(false);
@@ -494,7 +551,6 @@
                             مهران <span className="text-earth-rust">مصباح‌زاده</span>
                         </div>
 
-                        {/* Desktop Menu */}
                         <div className="hidden md:flex gap-6 lg:gap-8 items-center">
                             {NAV_ITEMS.map((item) => (
                                 <a 
@@ -516,7 +572,6 @@
                             </a>
                         </div>
 
-                        {/* Mobile Toggle */}
                         <button 
                             className="md:hidden text-earth-dark p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                             onClick={() => setIsOpen(!isOpen)}
@@ -526,12 +581,10 @@
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
 
-                        {/* Mobile Menu */}
                         <div 
                             className={`fixed inset-0 bg-earth-dark/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-6 transition-all duration-500 md:hidden ${
                                 isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
                             }`}
-                            style={{paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)'}}
                         >
                             <button 
                                 className="absolute top-6 left-6 text-earth-cream min-h-[44px] min-w-[44px] flex items-center justify-center"
@@ -570,13 +623,12 @@
 
             return (
                 <section id="home" className="min-h-screen flex items-center justify-center pt-20 md:pt-24 pb-12 px-4 relative overflow-hidden">
-                    {/* Background Blobs */}
                     <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[500px] md:h-[500px] bg-earth-primary/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob"></div>
                     <div className="absolute top-0 left-0 w-[150px] h-[150px] md:w-[500px] md:h-[500px] bg-earth-rust/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob" style={{animationDelay: '2s'}}></div>
                     <div className="absolute -bottom-16 left-4 md:-bottom-32 md:left-20 w-[180px] h-[180px] md:w-[500px] md:h-[500px] bg-earth-sand/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob" style={{animationDelay: '4s'}}></div>
 
                     <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
-                        <div className="order-2 lg:order-1 text-center lg:text-right space-y-6 md:space-y-8 animate-fade-in">
+                        <div className="order-2 lg:order-1 text-center lg:text-right space-y-6 md:space-y-8">
                             <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-earth-cream border border-earth-primary/20 rounded-full text-earth-primary text-xs md:text-sm font-bold shadow-sm">
                                 <span className="relative flex h-2 w-2 md:h-3 md:w-3">
                                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-earth-primary opacity-75"></span>
@@ -630,7 +682,7 @@
                                 <div className="absolute inset-4 md:inset-8 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] overflow-hidden shadow-xl md:shadow-2xl bg-earth-sand/20">
                                     <img 
                                         src="https://mesbahzadeh.pythonanywhere.com/staticfiles/media/teachers/profile/mehran.jpg" 
-                                        alt="مهران مصباح‌زاده - متخصص هوش مصنوعی و مدرس برنامه‌نویسی"
+                                        alt="مهران مصباح‌زاده"
                                         className="w-full h-full object-cover transform scale-105 hover:scale-100 transition-transform duration-700"
                                         loading="eager"
                                         width="500"
@@ -638,10 +690,9 @@
                                     />
                                 </div>
                                 
-                                {/* Floating Badge */}
-                                <div className="absolute bottom-6 -right-2 md:bottom-10 md:-right-4 glass-card p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg flex items-center gap-2 animate-bounce" style={{animationDuration: '3s'}}>
+                                <div className="absolute bottom-6 -right-2 md:bottom-10 md:-right-4 bg-white p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg flex items-center gap-2 animate-bounce" style={{animationDuration: '3s'}}>
                                     <div className="bg-earth-rust/10 p-1.5 md:p-2 rounded-lg md:rounded-xl text-earth-rust">
-                                        <Code size={18} md={24} />
+                                        <Code size={18} />
                                     </div>
                                     <div className="text-right">
                                         <div className="text-xxs md:text-xs text-earth-dark/60 font-bold">تخصص</div>
@@ -770,7 +821,6 @@
                             </p>
                         </div>
 
-                        {/* Filter Tabs */}
                         <div className="flex flex-wrap gap-2 justify-center mb-8 md:mb-12">
                             {categories.map(cat => (
                                 <button
@@ -788,14 +838,13 @@
                             ))}
                         </div>
 
-                        {/* Courses Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                             {filteredCourses.map((course, idx) => (
                                 <div key={idx} className="group bg-earth-cream rounded-2xl md:rounded-[2rem] overflow-hidden border border-earth-dark/5 hover:border-earth-primary/30 transition-all duration-300 hover:shadow-xl md:hover:shadow-2xl flex flex-col h-full">
                                     <div className="p-5 md:p-8 flex-1 flex flex-col">
                                         <div className="flex items-start justify-between mb-4">
                                             <div className="w-12 h-12 md:w-14 md:h-14 bg-earth-primary/10 rounded-xl md:rounded-2xl flex items-center justify-center text-earth-primary group-hover:bg-earth-primary group-hover:text-earth-cream transition-colors">
-                                                <course.icon size={24} md={28} />
+                                                <course.icon size={24} />
                                             </div>
                                             <span className="text-[10px] md:text-xs font-bold px-2 py-1 bg-earth-sand/20 text-earth-rust rounded-full">
                                                 {course.level}
@@ -846,7 +895,6 @@
                             ))}
                         </div>
                         
-                        {/* View All Courses Button */}
                         <div className="text-center mt-12">
                             <a 
                                 href="https://mesbahzadeh.pythonanywhere.com/courses"
@@ -1052,7 +1100,7 @@
                                         className="w-full py-3 md:py-4 bg-earth-sand text-earth-dark font-extrabold rounded-xl hover:bg-earth-primary hover:text-white transition-all flex items-center justify-center gap-2 shadow-lg active:scale-95 min-h-[50px]"
                                         aria-label="ارسال پیام"
                                     >
-                                        ارسال پیام <Send size={18} md={20} />
+                                        ارسال پیام <Send size={18} />
                                     </button>
                                 </form>
                             </div>
@@ -1070,57 +1118,9 @@
             </footer>
         );
 
-        // --- Helper Components ---
-        
-        const SocialLink = ({ href, icon: Icon, label }) => (
-            <a 
-                href={href} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-earth-cream hover:bg-earth-sand hover:text-earth-dark hover:scale-110 transition-all duration-300 active:scale-95"
-                aria-label={label}
-            >
-                <Icon size={18} md={20} />
-            </a>
-        );
-
-        const ContactItem = ({ icon: Icon, title, value, href }) => (
-            <div className="flex items-center gap-3 md:gap-4 group">
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-earth-primary/20 rounded-lg md:rounded-xl flex items-center justify-center text-earth-sand group-hover:bg-earth-sand group-hover:text-earth-dark transition-colors">
-                    <Icon size={20} md={22} />
-                </div>
-                <div>
-                    <h4 className="font-bold text-earth-cream text-base md:text-lg">{title}</h4>
-                    <a 
-                        href={href} 
-                        className="text-earth-cream/60 group-hover:text-earth-sand transition-colors font-sans dir-ltr block text-left text-sm md:text-base break-all"
-                        aria-label={`${title}: ${value}`}
-                    >
-                        {value}
-                    </a>
-                </div>
-            </div>
-        );
-
-        const InputGroup = ({ label, type, dir, name, value, onChange, required }) => (
-            <div className="space-y-2">
-                <label className="text-xs md:text-sm font-bold text-earth-cream/80 block">{label}</label>
-                <input 
-                    type={type} 
-                    dir={dir}
-                    name={name}
-                    value={value}
-                    onChange={onChange}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-earth-cream/10 focus:border-earth-sand focus:bg-white/10 outline-none transition-all text-earth-cream text-sm md:text-base"
-                    required={required}
-                    aria-label={label}
-                />
-            </div>
-        );
-
         const App = () => {
             useEffect(() => {
-                // Add structured data for SEO
+                // SEO structured data
                 const structuredData = {
                     "@context": "https://schema.org",
                     "@type": "Person",
@@ -1141,7 +1141,6 @@
                 script.text = JSON.stringify(structuredData);
                 document.head.appendChild(script);
                 
-                // Cleanup function
                 return () => {
                     const existingScript = document.querySelector('script[type="application/ld+json"]');
                     if (existingScript) {
@@ -1166,33 +1165,29 @@
             );
         };
 
-        // --- Mounting with Error Handling ---
+        // Mount the app
         const mountApp = () => {
             try {
                 const rootElement = document.getElementById('root');
                 if (rootElement) {
                     const root = ReactDOM.createRoot(rootElement);
                     root.render(<App />);
-                } else {
-                    console.error('Root element not found');
                 }
             } catch (error) {
-                console.error('Failed to mount React app:', error);
+                console.error('Error mounting app:', error);
                 document.getElementById('root').innerHTML = `
-                    <div style="padding: 2rem; text-align: center; background: #FEFAE0; color: #283618; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
-                        <div>
-                            <h1 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: #BC6C25;">خطا در بارگذاری</h1>
-                            <p>مشکلی در بارگذاری صفحه پیش آمده است. لطفاً صفحه را رفرش کنید.</p>
-                            <button onclick="window.location.reload()" style="margin-top: 1rem; padding: 0.5rem 1rem; background: #606C38; color: white; border: none; border-radius: 0.5rem; cursor: pointer;">
-                                رفرش صفحه
-                            </button>
-                        </div>
+                    <div style="padding: 2rem; text-align: center; background: #FEFAE0; color: #283618; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                        <h1 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; color: #BC6C25;">خطا در بارگذاری</h1>
+                        <p style="margin-bottom: 1rem;">مشکلی در بارگذاری صفحه پیش آمده است.</p>
+                        <button onclick="window.location.reload()" style="padding: 0.5rem 1rem; background: #606C38; color: white; border: none; border-radius: 0.5rem; cursor: pointer;">
+                            رفرش صفحه
+                        </button>
                     </div>
                 `;
             }
         };
 
-        // Wait for DOM to be ready
+        // Wait for page to load
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', mountApp);
         } else {
