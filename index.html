@@ -89,7 +89,7 @@
     </script>
     
     <!-- Babel for JSX transformation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
 
     <style>
         /* Custom Scrollbar - Mobile Friendly */
@@ -201,7 +201,7 @@
     </div>
 
     <!-- MAIN REACT APPLICATION -->
-    <script type="text/babel" data-type="module">
+    <script type="module">
         import React, { useState, useEffect, useLayoutEffect } from 'react';
         import { createRoot } from 'react-dom/client';
         import { 
@@ -232,6 +232,10 @@
         ];
 
         const PROJECTS = [
+              { title: "سیستم توصیه‌گر", ... },
+              { title: "مدل NLP فارسی", ... },
+              { title: "داشبورد تحلیل داده", ... },
+              { title: "API هوش مصنوعی", ... }
             {
                 title: 'سیستم تشخیص تصویر CNN',
                 description: 'طراحی مدل‌های یادگیری عمیق پیشرفته برای طبقه‌بندی تصاویر پزشکی با دقت ۹۸٪.',
@@ -265,6 +269,23 @@
                 link: '#'
             }
         ];
+    const COURSES = [
+      {
+        title: "پایتون از صفر تا حرفه‌ای",
+        description: "آموزش کامل Python پروژه‌محور",
+        link: "https://mesbahzadeh.pythonanywhere.com"
+      },
+      {
+        title: "هوش مصنوعی پیشرفته با پایتون",
+        description: "Deep Learning، CNN، پروژه واقعی",
+        link: "https://mesbahzadeh.pythonanywhere.com"
+      },
+      {
+        title: "پردازش تصویر و بینایی ماشین",
+        description: "OpenCV، تشخیص چهره و اشیا",
+        link: "https://mesbahzadeh.pythonanywhere.com"
+      }
+    ];
 
         const STATS = [
             { value: '+۸', label: 'سال تجربه' },
