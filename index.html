@@ -948,63 +948,89 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <span class="hero-badge-dot"></span>
-                        آماده همکاری در پروژه‌های جدید
+                <section id="home" className="min-h-screen flex items-center justify-center pt-20 md:pt-24 pb-12 px-4 relative overflow-hidden">
+                    {/* Background Blobs - Reduced size for mobile */}
+                    <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[500px] md:h-[500px] bg-earth-primary/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob"></div>
+                    <div className="absolute top-0 left-0 w-[150px] h-[150px] md:w-[500px] md:h-[500px] bg-earth-rust/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob" style={{animationDelay: '2s'}}></div>
+                    <div className="absolute -bottom-16 left-4 md:-bottom-32 md:left-20 w-[180px] h-[180px] md:w-[500px] md:h-[500px] bg-earth-sand/10 rounded-full mix-blend-multiply filter blur-2xl md:blur-3xl opacity-70 animate-blob" style={{animationDelay: '4s'}}></div>
+
+                    <div className="container mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
+                        <div className="order-2 lg:order-1 text-center lg:text-right space-y-6 md:space-y-8 animate-fade-in">
+                            <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-earth-cream border border-earth-primary/20 rounded-full text-earth-primary text-xs md:text-sm font-bold shadow-sm">
+                                <span className="relative flex h-2 w-2 md:h-3 md:w-3">
+                                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-earth-primary opacity-75"></span>
+                                  <span className="relative inline-flex rounded-full h-2 w-2 md:h-3 md:w-3 bg-earth-primary"></span>
+                                </span>
+                                آماده همکاری در پروژه‌های جدید
+                            </div>
+                            
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-earth-dark leading-[1.2] md:leading-[1.15]">
+                                مهندسی آینده با
+                                <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-earth-primary to-earth-rust">هوش مصنوعی</span>
+                            </h1>
+                            
+                            <p className="text-base md:text-xl text-earth-dark/70 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                                من مهران مصباح‌زاده هستم؛ متخصص یادگیری ماشین و مدرس برنامه‌نویسی.
+                                {!isMobile && <br />}
+                                به شما کمک می‌کنم تا ایده‌هایتان را به واقعیت دیجیتال تبدیل کنید.
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start pt-4">
+                                <a 
+                                    href="#portfolio" 
+                                    className="group px-6 py-3 md:px-8 md:py-4 bg-earth-dark text-earth-cream rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-earth-primary transition-all shadow-xl hover:shadow-2xl flex items-center justify-center gap-2 min-h-[50px] active:scale-95"
+                                    aria-label="مشاهده پروژه‌ها"
+                                >
+                                    مشاهده پروژه‌ها
+                                    <ArrowLeft className="group-hover:-translate-x-1 transition-transform" size={18} />
+                                </a>
+                                <a 
+                                    href="#contact" 
+                                    className="px-6 py-3 md:px-8 md:py-4 bg-white/50 border-2 border-earth-dark/10 text-earth-dark rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-white hover:border-earth-dark transition-all flex items-center justify-center min-h-[50px] active:scale-95"
+                                    aria-label="تماس با من"
+                                >
+                                    تماس با من
+                                </a>
+                            </div>
+
+                            <div className="flex gap-4 md:gap-6 justify-center lg:justify-start pt-6 border-t border-earth-dark/5">
+                                <SocialLink href="https://github.com/mesbahzadeh" icon={Github} label="GitHub" />
+                                <SocialLink href="https://linkedin.com/in/mehran-mesbahzadeh" icon={Linkedin} label="LinkedIn" />
+                                <SocialLink href="mailto:mehran.mesbahzadeh@yahoo.com" icon={Mail} label="Email" />
+                            </div>
+                        </div>
+
+                        <div className="order-1 lg:order-2 flex justify-center relative animate-float">
+                            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px]">
+                                <div className="absolute inset-0 border-2 md:border-[3px] border-earth-rust/20 rounded-[60%_40%_30%_70%/60%_30%_70%_40%] animate-blob"></div>
+                                <div className="absolute inset-2 md:inset-4 border-2 md:border-[3px] border-earth-primary/20 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] animate-blob" style={{animationDirection: 'reverse'}}></div>
+                                
+                                <div className="absolute inset-4 md:inset-8 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] overflow-hidden shadow-xl md:shadow-2xl bg-earth-sand/20">
+                                    <img 
+                                        src="https://mesbahzadeh.pythonanywhere.com/staticfiles/media/teachers/profile/mehran.jpg" 
+                                        alt="مهران مصباح‌زاده - متخصص هوش مصنوعی و مدرس برنامه‌نویسی"
+                                        className="w-full h-full object-cover transform scale-105 hover:scale-100 transition-transform duration-700"
+                                        loading="eager"
+                                        width="500"
+                                        height="500"
+                                    />
+                                </div>
+                                
+                                {/* Floating Badge - Hidden on very small screens */}
+                                <div className="absolute bottom-6 -right-2 md:bottom-10 md:-right-4 glass-card p-3 md:p-4 rounded-xl md:rounded-2xl shadow-lg flex items-center gap-2 animate-bounce" style={{animationDuration: '3s'}}>
+                                    <div className="bg-earth-rust/10 p-1.5 md:p-2 rounded-lg md:rounded-xl text-earth-rust">
+                                        <Code size={18} md={24} />
+                                    </div>
+                                    <div className="text-right">
+                                        <div className="text-xxs md:text-xs text-earth-dark/60 font-bold">تخصص</div>
+                                        <div className="text-sm md:text-base text-earth-dark font-black">AI Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <h1 class="hero-title">
-                        مهندسی آینده با
-                        <span class="text-gradient">هوش مصنوعی</span>
-                    </h1>
-                    
-                    <p class="hero-description">
-                        من مهران مصباح‌زاده هستم؛ متخصص یادگیری ماشین و مدرس برنامه‌نویسی.
-                        به شما کمک می‌کنم تا ایده‌هایتان را به واقعیت دیجیتال تبدیل کنید.
-                    </p>
-                    
-                    <div class="hero-buttons">
-                        <a href="#portfolio" class="btn btn-primary">
-                            مشاهده پروژه‌ها
-                            <i class="fas fa-arrow-left"></i>
-                        </a>
-                        <a href="#courses" class="btn btn-secondary">
-                            مشاهده دوره‌ها
-                        </a>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://github.com/mesbahzadeh" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/mehran-mesbahzadeh" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:mehran.mesbahzadeh@yahoo.com" class="social-link">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://instagram.com/mehran.mesbahzadeh" target="_blank" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="hero-image">
-                    <div class="profile-image-container">
-                        <div class="image-border"></div>
-                        <img src="https://mesbahzadeh.pythonanywhere.com/staticfiles/media/teachers/profile/mehran.jpg" 
-                             alt="مهران مصباح‌زاده" 
-                             class="profile-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </section>
 
     <!-- About Section -->
     <section class="about" id="about">
