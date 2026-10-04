@@ -1,0 +1,6 @@
+# Robots.txt for Mehran Mesbahzadeh (Portfolio & Academy)
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mesbahzadeh.github.io/sitemap.xml

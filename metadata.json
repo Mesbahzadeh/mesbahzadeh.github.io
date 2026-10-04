@@ -1,0 +1,6 @@
+{
+  "name": "مهران مصباح‌زاده | مهندس هوش مصنوعی و مدرس",
+  "description": "وب‌سایت شخصی و آموزشی مهران مصباح‌زاده، متخصص هوش مصنوعی، یادگیری ماشین، پایتون و علم داده با دوره‌های تخصصی و فرم ارتباط مستقیم واتس‌اپ",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
