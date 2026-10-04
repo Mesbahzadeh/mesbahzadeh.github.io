@@ -169,22 +169,6 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection, onOpenWhatsAppDir
                     <span>Python & AI Expert</span>
                   </div>
 
-                  <div className="absolute bottom-4 right-4 left-4 p-3.5 rounded-xl bg-white/95 backdrop-blur-md border border-white/40 shadow-lg">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-[#283618] font-black text-sm sm:text-base">
-                          {PERSONAL_INFO.name}
-                        </div>
-                        <div className="text-[#606C38] font-bold text-xs mt-0.5">
-                          مهندس یادگیری عمیق و مدرس علم داده
-                        </div>
-                      </div>
-                      <div className="w-9 h-9 rounded-lg bg-[#606C38]/15 border border-[#606C38]/30 flex items-center justify-center text-[#283618]">
-                        <Sparkles size={18} className="text-[#BC6C25]" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
                 {/* Quick WhatsApp Contact Chip inside Portrait */}
                 <div className="mt-4 pt-3 border-t border-[#283618]/10 flex items-center justify-between text-xs text-[#283618] px-1">
