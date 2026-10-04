@@ -52,7 +52,8 @@ git push -u origin main
 پکیج `gh-pages` نیز روی پروژه نصب و اسکریپت آن در `package.json` تعریف شده است:
 
 ```bash
-npm run deploy
+npm run build
+npm run deploy:gh-pages
 ```
 این دستور پروژه را بیلد کرده و خروجی پوشه `dist` را مستقیماً روی برنچ `gh-pages` گیت‌هاب آپلود می‌کند.
 
