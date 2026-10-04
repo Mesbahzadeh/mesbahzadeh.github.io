@@ -176,7 +176,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSection, onOpenWhatsAppDir
                           {PERSONAL_INFO.name}
                         </div>
                         <div className="text-[#606C38] font-bold text-xs mt-0.5">
-                          مهندس یادگیری عمیق و مدرس ارشد
+                          مهندس یادگیری عمیق و مدرس علم داده
                         </div>
                       </div>
                       <div className="w-9 h-9 rounded-lg bg-[#606C38]/15 border border-[#606C38]/30 flex items-center justify-center text-[#283618]">
