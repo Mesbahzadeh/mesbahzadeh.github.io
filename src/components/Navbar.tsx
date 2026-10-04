@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageCircle, Phone } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { Braces } from 'lucide-react';
 
 interface NavbarProps {
   onOpenWhatsAppDirect: () => void;
