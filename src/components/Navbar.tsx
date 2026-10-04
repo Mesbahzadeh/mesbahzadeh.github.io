@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenWhatsAppDirect }) => {
         <a href="#home" className="flex items-center gap-2.5 group">
           <div className="relative">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#283618] to-[#606C38] flex items-center justify-center font-bold text-[#FEFAE0] shadow-md shadow-[#283618]/20 group-hover:scale-105 transition-transform">
-              <i class="fa-solid fa-code"></i>
+              <i data-lucide="braces"></i>  
             </div>
             <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#BC6C25] rounded-full border-2 border-[#FEFAE0] animate-pulse" />
           </div>
