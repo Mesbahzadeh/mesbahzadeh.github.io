@@ -49,9 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenWhatsAppDirect }) => {
             <div className="font-extrabold text-base sm:text-lg text-[#283618] tracking-tight flex items-center gap-1.5">
               <span>{PERSONAL_INFO.name}</span>
             </div>
-            <div className="text-xs text-[#606C38] font-bold hidden sm:block">
-              مهندس هوش مصنوعی • مدرس پایتون و داده
-            </div>
+ 
           </div>
         </a>
 
