@@ -1,29 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle, Phone } from 'lucide-react';
+import { Menu, X, MessageCircle, Phone, Sparkles } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-
-import {
-  ArrowLeft,
-  MessageCircle,
-  BookOpen,
-  Briefcase,
-  Github,
-  Linkedin,
-  Mail,
-  Sparkles,
-  Phone,
-  Code2,
-  Gem,        // ← گزینه دیگر برای برکت
-  Award,      // ← گزینه دیگر
-} from 'lucide-react';
-
-const App = () => {
-  return (
-    <Braces />
-  );
-};
-
-export default App;
 
 
 interface NavbarProps {
